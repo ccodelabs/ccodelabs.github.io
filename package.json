@@ -8,7 +8,6 @@
     "jquery": "^1.11.3"
   },
   "dependencies": {
-    "jquery": ">=3.0.0",
     "magnific-popup": "^1.1.0",
     "scrollreveal": "^3.4.0"
   }

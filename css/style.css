@@ -1023,7 +1023,8 @@ Intro
 /* ================================
 Service cards
 ================================= */
-.card img {
+.card img,
+.card source {
 	border-radius: 50%;
 	max-width: 100%;
 	max-height: 100%;
@@ -1031,7 +1032,8 @@ Service cards
 	transition: all 0.2s;
 }
 
-.card img:hover {
+.card img:hover,
+.card source:hover {
 	transform: scale(1.4);
 	cursor: pointer;
 }
@@ -1052,13 +1054,20 @@ Service cards
 	border-top-right-radius: 25px;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 25px;
-	background: url('../img/services/back_1.webp') no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 	color: #F5F5F5;
 	margin-bottom: 5%;
+}
+
+.no-webp .card.first {
+	background: url('../img/services/back_1.jpg') no-repeat center center fixed;
+}
+
+.webp .card.first {
+	background: url('../img/services/back_1.webp') no-repeat center center fixed;
 }
 
 .card.second {
@@ -1071,13 +1080,20 @@ Service cards
 	border-top-right-radius: 10px;
 	border-bottom-left-radius: 25px;
 	border-bottom-right-radius: 10px;
-	background: url('../img/services/back_2.webp') no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 	color: #F5F5F5;
 	margin-bottom: 5%;
+}
+
+.no-webp .card.second {
+	background: url('../img/services/back_2.jpg') no-repeat center center fixed;
+}
+
+.webp .card.second {
+	background: url('../img/services/back_2.webp') no-repeat center center fixed;
 }
 
 .card.third {
@@ -1090,12 +1106,19 @@ Service cards
 	border-top-right-radius: 25px;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 25px;
-	background: url('../img/services/back_3.webp') no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 	color: #F5F5F5;
+}
+
+.no-webp .card.third {
+	background: url('../img/services/back_3.jpg') no-repeat center center fixed;
+}
+
+.webp .card.third {
+	background: url('../img/services/back_3.webp') no-repeat center center fixed;
 }
 
 @media screen and (max-width: 600px) {

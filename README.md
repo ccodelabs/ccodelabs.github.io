@@ -21,6 +21,7 @@ You can find our website at this link: [CCode](https://ccode.pt)
 * [jQuery](https://jquery.com/) - JavaScript library
 * [Tippy](https://atomiks.github.io/tippyjs/) - Tooltip framework used
 * [particles.js](https://vincentgarreau.com/particles.js/) - Initial animation used
+* [Modernizr](https://modernizr.com/) - Framework to adapt images depending on browsers
 
 ## Contributing
 

@@ -22,13 +22,13 @@ You can find our website at this link: [CCode](https://ccode.pt)
 
 ## Contributing
 
-* **Marcelo Coelho** - *Initial work* - [ccodestaff](https://github.com/ccodestaff)
-* **Murilo Pontes** - *Initial work* - [murilopontes](https://github.com/murilopontes)
-* **João Oliveira** - *Initial work* - [jotapeoliveira](https://github.com/jotapeoliveira)
-* **Murix** - *Initial work* - [murix](https://github.com/murix)
-* **Rodrigo Tavares** - *Initial work* - [maseurodrigo](https://github.com/maseurodrigo)
+* **Marcelo Coelho** - *Company member* - [ccodestaff](https://github.com/ccodestaff)
+* **Murilo Pontes** - *Website contributor* - [murilopontes](https://github.com/murilopontes)
+* **João Oliveira** - *Company member* - [jotapeoliveira](https://github.com/jotapeoliveira)
+* **Murix** - *Website contributor* - [murix](https://github.com/murix)
+* **Rodrigo Tavares** - *Website contributor* - [maseurodrigo](https://github.com/maseurodrigo)
 
 ## License
 
-This project is licensed under the CCode License, contact us for details
+This project is licensed under the CCode License, contact us for details.
 

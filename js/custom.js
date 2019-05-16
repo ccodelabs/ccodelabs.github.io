@@ -98,17 +98,17 @@
     (index === 0) ?
     introCarouselIndicators.append("<li data-target='#introCarousel' data-slide-to='" + index + "' class='active'></li>"):
       introCarouselIndicators.append("<li data-target='#introCarousel' data-slide-to='" + index + "'></li>");
-
+    var tempThis = this;
     // Check if browser support webp image format
-    /*Modernizr.on('webp', function (result) {
+    Modernizr.on('webp', function (result) {
       if (result) {
-        $(this).css("background-image", "url('" + $(this).children('.carousel-background').children('picture').children('source').attr('srcset') + "')");
-        $(this).children('.carousel-background').remove();
-      } else {*/
-    $(this).css("background-image", "url('" + $(this).children('.carousel-background').children('picture').children('img').attr('src') + "')");
-    $(this).children('.carousel-background').remove();
-    /* }
-    });*/
+        $(tempThis).css("background-image", "url('" + $(tempThis).children('.carousel-background').children('picture').children('source').attr('srcset') + "')");
+        $(tempThis).children('.carousel-background').remove();
+      } else {
+        $(tempThis).css("background-image", "url('" + $(tempThis).children('.carousel-background').children('picture').children('img').attr('src') + "')");
+        $(tempThis).children('.carousel-background').remove();
+      }
+    });
   });
 
   // introCarousel.on('slid.bs.carousel', function (e) {

@@ -1060,14 +1060,18 @@ Service cards
 	background-size: cover;
 	color: #F5F5F5;
 	margin-bottom: 5%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
 }
 
 .no-webp .card.first {
-	background: url('../img/services/back_1.jpg') no-repeat center center fixed;
+	background: url('../img/services/back_1.jpg') !important;
+
 }
 
 .webp .card.first {
-	background: url('../img/services/back_1.webp') no-repeat center center fixed;
+	background-image: url('../img/services/back_1.webp') !important;
 }
 
 .card.second {
@@ -1086,14 +1090,17 @@ Service cards
 	background-size: cover;
 	color: #F5F5F5;
 	margin-bottom: 5%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
 }
 
 .no-webp .card.second {
-	background: url('../img/services/back_2.jpg') no-repeat center center fixed;
+	background: url('../img/services/back_2.jpg') !important;
 }
 
 .webp .card.second {
-	background: url('../img/services/back_2.webp') no-repeat center center fixed;
+	background-image: url('../img/services/back_2.webp') !important;
 }
 
 .card.third {
@@ -1111,14 +1118,17 @@ Service cards
 	-o-background-size: cover;
 	background-size: cover;
 	color: #F5F5F5;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
 }
 
 .no-webp .card.third {
-	background: url('../img/services/back_3.jpg') no-repeat center center fixed;
+	background: url('../img/services/back_3.jpg') !important;
 }
 
 .webp .card.third {
-	background: url('../img/services/back_3.webp') no-repeat center center fixed;
+	background-image: url('../img/services/back_3.webp') !important;
 }
 
 @media screen and (max-width: 600px) {

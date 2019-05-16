@@ -1,14 +1,14 @@
 {
   "name": "ccode-web",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "devDependencies": {
-    "bootstrap": "^3.3.7",
-    "font-awesome": "^4.6.3",
-    "jquery": "^1.11.3"
+    "bootstrap": "^4.3.1",
+    "font-awesome": "^5.8.2",
+    "jquery": "^3.4.1"
   },
   "dependencies": {
-    "magnific-popup": "^1.1.0",
-    "scrollreveal": "^3.4.0"
+    "tippy": "^4.3.1",
+    "particles.js": "^2.0.0"
   }
 }

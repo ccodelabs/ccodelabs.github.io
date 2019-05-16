@@ -1,0 +1,57 @@
+a,
+a:hover {
+  color: #F05F40;
+}
+
+/* Back to top button */
+.back-to-top {
+  background: #F05F40;
+  color: #fff;
+}
+
+
+.back-to-top:focus {
+  background: #e64a19;
+  color: #fff;
+}
+
+.back-to-top:hover {
+  background: #e64a19;
+  color: #fff;
+}
+
+.navbar-default {
+  background: linear-gradient(270deg, #f05f40, #ff7043, #e64a19);
+}
+
+.form-control:focus {
+  border-color: #F05F40;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 2px #F05F40;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 2px #F05F40;
+}
+
+.service .carousel-indicators .active {
+  background: #F05F40;
+}
+
+.btn-theme {
+  background: #F05F40;
+}
+
+.contact-widget i {
+  color: #F05F40;
+}
+
+/* Tooltips */
+#team .tooltip.top .tooltip-inner,
+.tooltip.left .tooltip-inner {
+  background-color: #d84315;
+}
+
+#team .tooltip.top .tooltip-arrow {
+  border-top-color: #d84315;
+}
+
+.tooltip.left .tooltip-arrow {
+  border-left-color: #d84315;
+}

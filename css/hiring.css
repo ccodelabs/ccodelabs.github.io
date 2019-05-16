@@ -1,0 +1,190 @@
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+@media (max-width: 1024px) {
+    .default {
+        background-color: #fafafa;
+        opacity: 0.9;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding: 2% 0% 2% 0%;
+    }
+
+    .box-team img {
+        height: 60%;
+        width: 60%;
+        margin-bottom: 5%;
+    }
+}
+
+@media (min-width: 1025px) {
+    .default {
+        background-color: #fafafa;
+        opacity: 0.9;
+        position: fixed;
+        top: 5%;
+        left: 10%;
+        right: 10%;
+        height: 90%;
+        width: 80%;
+        border-radius: 10px;
+        overflow-y: scroll;
+        padding: 2% 0% 2% 0%;
+    }
+}
+
+.default p {
+    font-size: 18px;
+    line-height: 2.5;
+}
+
+.wanted,
+.applying {
+    margin-top: 5%;
+}
+
+.box-team p {
+    line-height: 1.8;
+}
+
+.wantedIMG {
+    width: 75%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wanted p {
+    font-size: 14px;
+}
+
+.imgHiring {
+    border-radius: 25px;
+}
+
+.loading {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #B1C0CB;
+}
+
+.js .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile+label {
+    max-width: 80%;
+    font-size: 1.25rem;
+    /* 20px */
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+}
+
+.no-js .inputfile+label {
+    display: none;
+}
+
+.inputfile:focus+label,
+.inputfile.has-focus+label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile+label * {
+    /* pointer-events: none; */
+    /* in case of FastClick lib use */
+}
+
+.inputfile+label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    /* 4px */
+    margin-right: 0.25em;
+    /* 4px */
+}
+
+.inputfile-6+label {
+    color: #d86e58;
+}
+
+.inputfile-6+label {
+    border: 1px solid #F05F40;
+    background-color: #f1e5e6;
+    padding: 0;
+}
+
+.inputfile-6:focus+label,
+.inputfile-6.has-focus+label,
+.inputfile-6+label:hover {
+    border-color: #ef502e;
+}
+
+.inputfile-6+label span,
+.inputfile-6+label strong {
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+}
+
+.inputfile-6+label span {
+    width: 200px;
+    min-height: 2em;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.inputfile-6+label strong {
+    height: 100%;
+    color: #f1e5e6;
+    background-color: #F05F40;
+    display: inline-block;
+}
+
+.inputfile-6:focus+label strong,
+.inputfile-6.has-focus+label strong,
+.inputfile-6+label:hover strong {
+    background-color: #ef502e;
+}
+
+@media screen and (max-width: 50em) {
+    .inputfile-6+label strong {
+        display: block;
+    }
+}

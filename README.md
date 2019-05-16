@@ -1,4 +1,6 @@
-# ![ccodelabs.github.io](https://i.postimg.cc/hvfXVvF0/logo-2.png)
+<p align="center">
+  <img src="https://i.postimg.cc/hvfXVvF0/logo-2.png">
+</p>
 
 ### Help you with your new challenge!
 CCode is a young company, where you can focus on new and different technology fields related to Electronics, so we are proud to share that we are never bored!

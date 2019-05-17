@@ -15,11 +15,21 @@
   <link href="css/style.min.css?v=0.001" rel="stylesheet" media="screen">
   <link href="color/default.min.css" rel="stylesheet" media="screen" async>
 </head>
+<!-- Template Custom Javascript File -->
+<script>
+  function downloadJSAtOnload() {
+    var element = document.createElement("script");
+    element.src = "js/custom.min.js";
+    document.body.appendChild(element);
+  }
+  if (window.addEventListener)
+    window.addEventListener("load", downloadJSAtOnload, false);
+  else if (window.attachEvent)
+    window.attachEvent("onload", downloadJSAtOnload);
+  else window.onload = downloadJSAtOnload;
+</script>
 
 <body>
-  <div class="loading">
-    <img class="noselect" src="img/others/loading.gif" alt="" width="" height="">
-  </div>
   <!-- Navigation -->
   <nav class="navbar navbar-default" role="navigation">
     <div class="container">
@@ -49,7 +59,7 @@
       </div>
     </div>
   </nav>
-  <div id="fixedHiring" class="fixedHiring animated fadeInDown" style="display: none;">
+  <div id="fixedHiring" class="fixedHiring animated fadeInDown workGPU" style="display: none;">
     <div role="tooltip" class="tooltip left custom-tooltip">
       <div class="tooltip-arrow"></div>
       <div class="tooltip-inner">
@@ -81,7 +91,7 @@
                 <img class="noselect" src="img/intro/0.jpg" alt="CCode">
               </picture>
             </div>
-            <div id="particles-js"></div>
+            <div id="particles-js" class="workGPU"></div>
             <div class="carousel-container">
               <div class="carousel-content">
                 <p class="animated fadeInUp">
@@ -90,7 +100,7 @@
                     <img class="noselect" src="img/logos/logo_2.jpg" alt="" height="70%" width="70%" />
                   </picture>
                 </p>
-                <div class="animated fadeInDown introTitle noselect">
+                <div class="animated fadeInDown introTitle noselect workGPU">
                   <div class="animated fadeInDown" data-wow-delay="0.5s">
                     <h2>Innovation</h2>
                   </div>
@@ -98,7 +108,7 @@
                     <h2>&nbsp;and Engineering at your Service</h2>
                   </div>
                 </div>
-                <a href="#about" class="btn-get-started noselect"><span>Find Out More</span></a>
+                <a href="#about" class="btn-get-started noselect workGPU"><span>Find Out More</span></a>
               </div>
             </div>
           </div>
@@ -143,7 +153,7 @@
     </div>
   </section>
   <!-- Parallax 1 -->
-  <section id="parallax1" class="home-section parallax" data-stellar-background-ratio="0.5">
+  <section id="parallax1" class="home-section parallax workGPU" data-stellar-background-ratio="0.5">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -172,7 +182,7 @@
           </div>
         </div>
       </div>
-      <div class="card wow bounceInLeft first">
+      <div class="card wow bounceInLeft first workGPU">
         <div class="row">
           <div class="col-md-2">
             <picture>
@@ -190,7 +200,7 @@
           </div>
         </div>
       </div>
-      <div class="card wow bounceInRight second">
+      <div class="card wow bounceInRight second workGPU">
         <div class="row">
           <div class="col-md-10">
             <div class="card-body">
@@ -211,7 +221,7 @@
           </div>
         </div>
       </div>
-      <div class="card wow bounceInLeft third">
+      <div class="card wow bounceInLeft third workGPU">
         <div class="row">
           <div class="col-md-2">
             <picture>
@@ -246,7 +256,7 @@
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-          <div id="teamIMG" class="box-team wow bounceInUp" data-wow-delay="0.1s" data-tippy-content="<div class='row teamIMGRow'>
+          <div id="teamIMG" class="box-team wow bounceInUp workGPU" data-wow-delay="0.1s" data-tippy-content="<div class='row teamIMGRow'>
                 <div class='col-md-6'>
                   <b><a class='teamLink' href='mailto:ma@ccode.pt'><i class='fa fa-envelope'></i></a></b>
                 </div>
@@ -264,7 +274,7 @@
           </div>
         </div>
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-          <div id="teamIMG" class="box-team wow bounceInUp" data-wow-delay="0.3s" data-tippy-content="<div class='row teamIMGRow'>
+          <div id="teamIMG" class="box-team wow bounceInUp workGPU" data-wow-delay="0.3s" data-tippy-content="<div class='row teamIMGRow'>
             <div class='col-md-6'>
               <b><a class='teamLink' href='mailto:mc@ccode.pt'><i class='fa fa-envelope'></i></a></b>
             </div>
@@ -282,7 +292,7 @@
           </div>
         </div>
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-          <div id="teamIMG" class="box-team wow bounceInUp" data-wow-delay="0.5s" data-tippy-content="<div class='row teamIMGRow'>
+          <div id="teamIMG" class="box-team wow bounceInUp workGPU" data-wow-delay="0.5s" data-tippy-content="<div class='row teamIMGRow'>
             <div class='col-md-6'>
               <b><a class='teamLink' href='mailto:aa@ccode.pt'><i class='fa fa-envelope'></i></a></b>
             </div>
@@ -300,7 +310,7 @@
           </div>
         </div>
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-          <div id="teamIMG" class="box-team wow bounceInUp" data-wow-delay="0.7s" data-tippy-content="<div class='row teamIMGRow'>
+          <div id="teamIMG" class="box-team wow bounceInUp workGPU" data-wow-delay="0.7s" data-tippy-content="<div class='row teamIMGRow'>
             <div class='col-md-6'>
               <b><a class='teamLink' href='mailto:jb@ccode.pt'><i class='fa fa-envelope'></i></a></b>
           </div>
@@ -321,7 +331,7 @@
     </div>
   </section>
   <!-- Parallax 2 -->
-  <section id="parallax2" class="home-section parallax" data-stellar-background-ratio="0.5">
+  <section id="parallax2" class="home-section parallax workGPU" data-stellar-background-ratio="0.5">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -360,7 +370,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <div class="contact-widget wow bounceInLeft contact-interaction" data-toggle="modal"
+          <div class="contact-widget wow bounceInLeft contact-interaction workGPU" data-toggle="modal"
             data-target="#modalLocation" style="cursor:pointer;">
             <i class="fa fa-map-marker fa-4x"></i>
             <h5>Main Office</h5>
@@ -368,14 +378,14 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="contact-widget wow bounceInUp">
+          <div class="contact-widget wow bounceInUp workGPU">
             <i class="fa fa-phone fa-4x"></i>
             <h5>Call</h5>
             <p>234 092 937</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="contact-widget wow bounceInRight contact-interaction" data-toggle="modal"
+          <div class="contact-widget wow bounceInRight contact-interaction workGPU" data-toggle="modal"
             data-target="#modalContact" style="cursor:pointer;">
             <i class="fa fa-envelope fa-4x"></i>
             <h5>Email us</h5>
@@ -416,7 +426,7 @@
     </div>
   </footer>
   <!-- Modal Location -->
-  <div class="modal fade" id="modalLocation" tabindex="-1" role="dialog" aria-labelledby="modalLocation"
+  <div class="modal fade workGPU" id="modalLocation" tabindex="-1" role="dialog" aria-labelledby="modalLocation"
     aria-hidden="true" style="z-index: 9999;">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content" style="border-radius:15px;">
@@ -433,7 +443,7 @@
   </div>
 
   <!-- Modal Contact -->
-  <div class="modal fade" id="modalContact" tabindex="-1" role="dialog" aria-labelledby="modalContact"
+  <div class="modal fade workGPU" id="modalContact" tabindex="-1" role="dialog" aria-labelledby="modalContact"
     aria-hidden="true" style="z-index: 9999;">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content" style="border-radius:15px;">
@@ -489,9 +499,8 @@
                 </div>
                 <div class="form-group">
                   <div class="col-md-offset-2 col-md-8">
-                    <button type="submit" class="btn btn-theme btn-lg btn-block" data-toggle="tooltip"
-                      data-placement="bottom" title="If you have any question or just want to say 'hello' to CCode please fill out form above and
-                      we will try to get in touch with you within 24 hours">Send message</button>
+                    <button id="submitContact" type="submit" class="btn btn-theme btn-lg btn-block">Send
+                      message</button>
                   </div>
                 </div>
               </form>
@@ -541,8 +550,6 @@
   <script src="js/tippy.all.min.js"></script>
   <!-- Contact Form JavaScript File -->
   <script src="contactform/contactform.js" async></script>
-  <!-- Template Custom Javascript File -->
-  <script src="js/custom.min.js"></script>
 </body>
 
 </html>

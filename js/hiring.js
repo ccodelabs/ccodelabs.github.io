@@ -2,9 +2,6 @@
     $('[data-toggle="tooltip"]').tooltip({
         trigger: "hover"
     });
-    $(window).load(function () {
-        $(".loading").fadeOut(1000);
-    });
     //animation
     wow = new WOW({
         boxClass: 'wow', // default

@@ -1,8 +1,4 @@
 (function ($) {
-  $(window).load(function () {
-    $(".loading").fadeOut(700);
-  });
-
   tippy('div#teamIMG', {
     a11y: false,
     theme: 'ccode',

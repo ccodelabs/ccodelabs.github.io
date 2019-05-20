@@ -9,7 +9,11 @@ Imports
 /* ================================
 General
 ================================= */
-.workGPU {
+
+*
+
+/*.workGPU*/
+	{
 	-webkit-transform: rotateZ(360deg);
 	-moz-transform: rotateZ(360deg);
 	-ms-transform: rotateZ(360deg);

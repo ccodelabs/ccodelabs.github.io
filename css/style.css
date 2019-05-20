@@ -10,10 +10,13 @@ Imports
 General
 ================================= */
 
-*
+@font-face {
+	font-family: 'Arvo-auto';
+	font-display: auto;
+	src: local('Arvo'), url(https://fonts.gstatic.com/s/arvo/v9/rC7kKhY-eUDY-ucISTIf5PesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  }
 
-/*.workGPU*/
-	{
+.workGPU {
 	-webkit-transform: rotateZ(360deg);
 	-moz-transform: rotateZ(360deg);
 	-ms-transform: rotateZ(360deg);
@@ -44,7 +47,6 @@ General
 
 body {
 	text-align: center;
-	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	line-height: 1.6em;
 }

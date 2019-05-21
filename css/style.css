@@ -436,6 +436,11 @@ Devices adaptation
 	.back-to-top {
 		bottom: 15px;
 	}
+
+	.box-team h5 {
+		margin-top: 10%;
+		font-size: 16px;
+	}
 }
 
 /* ================================

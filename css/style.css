@@ -10,6 +10,11 @@ Imports
 General
 ================================= */
 
+/*Smooth scroll helper*/
+* {
+	-webkit-overflow-scrolling: touch !important;
+}
+
 .workGPU {
 	-webkit-transform: rotateZ(360deg);
 	-moz-transform: rotateZ(360deg);

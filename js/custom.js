@@ -1,11 +1,10 @@
 (function ($) {
-  tippy('div#teamIMG', {
+  tippy('.imgTeam', {
     a11y: false,
     theme: 'ccode',
-    placement: 'top',
+    placement: 'bottom',
     arrow: true,
     animation: 'perspective',
-    trigger: 'click',
     interactive: true,
   });
 
@@ -49,6 +48,7 @@
     }
   });
 
+  var intro = $('#intro').offset().top;
   var about = $('#about').offset().top;
   var services = $('#services').offset().top;
   var team = $('#team').offset().top;
@@ -63,27 +63,38 @@
     } else if (scrollTop == 0) {
       $('.navbar-default').removeClass('fixed-to-top');
     }
+
     var scrollPos = $(document).scrollTop();
     if (scrollPos >= about && scrollPos < services) {
+      $('#introNav').css('color', '#f5f5f5');
       $('#aboutNav').css('color', '#424242');
       $('#servicesNav').css('color', '#f5f5f5');
       $('#teamNav').css('color', '#f5f5f5');
       $('#bottomWidgetNav').css('color', '#f5f5f5');
     } else if (scrollPos >= services && scrollPos < team) {
+      $('#introNav').css('color', '#f5f5f5');
       $('#aboutNav').css('color', '#f5f5f5');
       $('#servicesNav').css('color', '#424242');
       $('#teamNav').css('color', '#f5f5f5');
       $('#bottomWidgetNav').css('color', '#f5f5f5');
     } else if (scrollPos >= team && scrollPos < bottomWidget) {
+      $('#introNav').css('color', '#f5f5f5');
       $('#aboutNav').css('color', '#f5f5f5');
       $('#servicesNav').css('color', '#f5f5f5');
       $('#teamNav').css('color', '#424242');
       $('#bottomWidgetNav').css('color', '#f5f5f5');
     } else if (scrollPos >= bottomWidget) {
+      $('#introNav').css('color', '#f5f5f5');
       $('#aboutNav').css('color', '#f5f5f5');
       $('#servicesNav').css('color', '#f5f5f5');
       $('#teamNav').css('color', '#f5f5f5');
       $('#bottomWidgetNav').css('color', '#424242');
+    } else if (scrollPos > intro) {
+      $('#introNav').css('color', '#424242');
+      $('#aboutNav').css('color', '#f5f5f5');
+      $('#servicesNav').css('color', '#f5f5f5');
+      $('#teamNav').css('color', '#f5f5f5');
+      $('#bottomWidgetNav').css('color', '#f5f5f5');
     }
   });
 

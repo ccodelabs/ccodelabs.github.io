@@ -15,7 +15,8 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link href="css/style.min.css" rel="stylesheet" media="screen">
   <link href="color/default.min.css" rel="stylesheet" media="screen">
-  <link href="css/hiring.css" rel="stylesheet" media="screen">
+  <link href="css/hiring.min.css" rel="stylesheet" media="screen">
+  <link href="css/pace-theme-minimal.css" rel="stylesheet" />
   <style>
     .no-webp body {
       background-image: url('img/intro/0.jpg');
@@ -30,13 +31,25 @@
     }
   </style>
 </head>
+<!-- Template Custom Javascript File -->
+<script>
+  function downloadJSAtOnload() {
+    var element = document.createElement("script");
+    element.src = "js/hiring.min.js";
+    document.body.appendChild(element);
+  }
+  if (window.addEventListener)
+    window.addEventListener("load", downloadJSAtOnload, false);
+  else if (window.attachEvent)
+    window.attachEvent("onload", downloadJSAtOnload);
+  else window.onload = downloadJSAtOnload;
+</script>
 <div id="particles-js"></div>
-
 <body>
   <div class="default low-shadow">
     <section id="about">
-      <div class="container workGPU">
-        <div class="row wow fadeInDown">
+      <div class="container">
+        <div class="row wow fadeInDown workGPU">
           <div class="col-md-offset-2 col-md-8">
             <div class="section-heading">
               <h2>We are hiring</h2>
@@ -44,7 +57,7 @@
             </div>
           </div>
         </div>
-        <div class="row wow fadeInUp aboutInfo">
+        <div class="row wow fadeInUp aboutInfo workGPU">
           <div class="col-md-6 about-img">
             <picture>
               <source class="noselect imgHiring" srcset="img/others/hiring.webp" type="image/webp">
@@ -73,9 +86,9 @@
             </div>
           </div>
         </div>
-        <div class="row workGPU">
+        <div class="row">
           <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <div class="box-team wow bounceInUp" data-wow-delay="0.1s">
+            <div class="box-team wow bounceInUp workGPU" data-wow-delay="0.1s">
               <picture>
                 <source class="img-circle img-responsive low-shadow wantedIMG noselect" srcset="img/hiring/1.webp"
                   type="image/webp">
@@ -86,7 +99,7 @@
             </div>
           </div>
           <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <div class="box-team wow bounceInUp" data-wow-delay="0.2s">
+            <div class="box-team wow bounceInUp workGPU" data-wow-delay="0.2s">
               <picture>
                 <source class="img-circle img-responsive low-shadow wantedIMG noselect" srcset="img/hiring/2.webp"
                   type="image/webp">
@@ -97,7 +110,7 @@
             </div>
           </div>
           <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <div class="box-team wow bounceInUp" data-wow-delay="0.3s">
+            <div class="box-team wow bounceInUp workGPU" data-wow-delay="0.3s">
               <picture>
                 <source class="img-circle img-responsive low-shadow wantedIMG noselect" srcset="img/hiring/3.webp"
                   type="image/webp">
@@ -108,7 +121,7 @@
             </div>
           </div>
           <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <div class="box-team wow bounceInUp" data-wow-delay="0.4s">
+            <div class="box-team wow bounceInUp workGPU" data-wow-delay="0.4s">
               <picture>
                 <source class="img-circle img-responsive low-shadow wantedIMG noselect" srcset="img/hiring/4.webp"
                   type="image/webp">
@@ -119,7 +132,7 @@
             </div>
           </div>
           <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <div class="box-team wow bounceInUp" data-wow-delay="0.5s">
+            <div class="box-team wow bounceInUp workGPU" data-wow-delay="0.5s">
               <picture>
                 <source class="img-circle img-responsive low-shadow wantedIMG noselect" srcset="img/hiring/5.webp"
                   type="image/webp">
@@ -130,7 +143,7 @@
             </div>
           </div>
           <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-            <div class="box-team wow bounceInUp" data-wow-delay="0.6s">
+            <div class="box-team wow bounceInUp workGPU" data-wow-delay="0.6s">
               <picture>
                 <source class="img-circle img-responsive low-shadow wantedIMG noselect" srcset="img/hiring/6.webp"
                   type="image/webp">
@@ -252,9 +265,10 @@
   <script src="js/app.min.js"></script>
   <!-- Modernizr JS -->
   <script src="js/modernizr-custom.min.js"></script>
+  <!-- Progress indicator library -->
+  <script src="js/pace.min.js"></script>
   <!-- Contact Form JavaScript File -->
   <script src="contactform/contactform.js" async></script>
-  <script src="js/hiring.js"></script>
 </body>
 
 </html>

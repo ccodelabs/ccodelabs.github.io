@@ -566,7 +566,7 @@ Fixed hiring animation
 	width: 80px;
 	transition: all 0.2s;
 	cursor: pointer;
-	-webkit-animation: rotation 2s infinite linear;
+	-webkit-animation: rotation 3s infinite linear;
 }
 
 @-webkit-keyframes rotation {

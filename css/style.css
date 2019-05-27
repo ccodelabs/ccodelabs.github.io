@@ -259,11 +259,93 @@ Devices adaptation
 	.introTitle {
 		text-align: center;
 		overflow: hidden;
+		transition: all .4s linear;
 	}
 
 	.introTitle h2 {
 		font-size: 28px !important;
 		text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	}
+
+	.introTitle div {
+		display: inline-block;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+
+	.introTitle div:first-of-type {
+		animation: showup 10s infinite;
+	}
+
+	.introTitle div:last-of-type {
+		width: 0px;
+		animation: reveal 10s infinite;
+	}
+
+	.introTitle div:last-of-type h2 {
+		margin-left: -850px;
+		animation: slidein 10s infinite;
+	}
+
+	@keyframes showup {
+		0% {
+			opacity: 0;
+		}
+
+		20% {
+			opacity: 1;
+		}
+
+		80% {
+			opacity: 1;
+		}
+
+		100% {
+			opacity: 0;
+		}
+	}
+
+	@keyframes slidein {
+		0% {
+			margin-left: -850px;
+		}
+
+		20% {
+			margin-left: -850px;
+		}
+
+		35% {
+			margin-left: 0px;
+		}
+
+		100% {
+			margin-left: 0px;
+		}
+	}
+
+	@keyframes reveal {
+		0% {
+			opacity: 0;
+			width: 0px;
+		}
+
+		20% {
+			opacity: 1;
+			width: 0px;
+		}
+
+		30% {
+			width: auto;
+		}
+
+		80% {
+			opacity: 1;
+		}
+
+		100% {
+			opacity: 0;
+			width: auto;
+		}
 	}
 
 	.btn-get-started {

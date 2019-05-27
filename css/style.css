@@ -456,7 +456,6 @@ Team
 }
 
 .teamIMG {
-	cursor: pointer;
 	width: 70%;
 	display: block;
 	margin-left: auto;
@@ -465,6 +464,10 @@ Team
 
 .teamIMGRow {
 	padding: 0% 3% 0% 3%;
+}
+
+.imgTeam{
+	margin-bottom: 5% !important;
 }
 
 .teamLink {
@@ -504,21 +507,6 @@ Fixed hiring animation
 	to {
 		-webkit-transform: rotate(359deg);
 	}
-}
-
-.custom-tooltip {
-	display: inline-block;
-	margin: 0 auto;
-	opacity: 1;
-	position: relative;
-}
-
-.tooltip.left .tooltip-inner {
-	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
-
-.tooltip.left .tooltip-arrow {
-	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 /* ================================

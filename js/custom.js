@@ -1,13 +1,4 @@
 (function ($) {
-  tippy('.imgTeam', {
-    a11y: false,
-    theme: 'ccode',
-    placement: 'bottom',
-    arrow: true,
-    animation: 'perspective',
-    interactive: true,
-  });
-
   // Back to top button
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {

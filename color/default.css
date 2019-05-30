@@ -46,15 +46,15 @@ a:hover {
 .tooltip.top .tooltip-inner,
 .tooltip.left .tooltip-inner,
 #team .tooltip.bottom .tooltip-inner {
-  background-color: #d84315 !important;
+  background-color: #e64a19 !important;
 }
 
 #team .tooltip.bottom .tooltip-arrow {
-  border-bottom-color: #d84315 !important;
+  border-bottom-color: #e64a19 !important;
 }
 
 .tooltip.left .tooltip-arrow {
-  border-left-color: #d84315;
+  border-left-color: #e64a19;
 }
 
 .custom-tooltip {

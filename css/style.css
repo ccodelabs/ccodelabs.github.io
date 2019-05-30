@@ -96,16 +96,6 @@ textarea {
 	resize: none;
 }
 
-#particles-js {
-	width: 100%;
-	height: 100%;
-	background-image: url('');
-	background-size: cover;
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
-	opacity: 0.2;
-}
-
 .lead {
 	font-weight: 400;
 }
@@ -269,93 +259,11 @@ Devices adaptation
 	.introTitle {
 		text-align: center;
 		overflow: hidden;
-		transition: all .4s linear;
 	}
 
 	.introTitle h2 {
 		font-size: 28px !important;
 		text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-	}
-
-	.introTitle div {
-		display: inline-block;
-		overflow: hidden;
-		white-space: nowrap;
-	}
-
-	.introTitle div:first-of-type {
-		animation: showup 10s infinite;
-	}
-
-	.introTitle div:last-of-type {
-		width: 0px;
-		animation: reveal 10s infinite;
-	}
-
-	.introTitle div:last-of-type h2 {
-		margin-left: -850px;
-		animation: slidein 10s infinite;
-	}
-
-	@keyframes showup {
-		0% {
-			opacity: 0;
-		}
-
-		20% {
-			opacity: 1;
-		}
-
-		80% {
-			opacity: 1;
-		}
-
-		100% {
-			opacity: 0;
-		}
-	}
-
-	@keyframes slidein {
-		0% {
-			margin-left: -850px;
-		}
-
-		20% {
-			margin-left: -850px;
-		}
-
-		35% {
-			margin-left: 0px;
-		}
-
-		100% {
-			margin-left: 0px;
-		}
-	}
-
-	@keyframes reveal {
-		0% {
-			opacity: 0;
-			width: 0px;
-		}
-
-		20% {
-			opacity: 1;
-			width: 0px;
-		}
-
-		30% {
-			width: auto;
-		}
-
-		80% {
-			opacity: 1;
-		}
-
-		100% {
-			opacity: 0;
-			width: auto;
-		}
 	}
 
 	.btn-get-started {
@@ -456,6 +364,7 @@ Team
 }
 
 .teamIMG {
+	cursor: pointer;
 	width: 70%;
 	display: block;
 	margin-left: auto;
@@ -466,15 +375,11 @@ Team
 	padding: 0% 3% 0% 3%;
 }
 
-.imgTeam{
-	margin-bottom: 5% !important;
-}
-
 .teamLink {
 	text-decoration: none;
 	/* no underline */
 	color: #ffffff;
-	font-size: 15px;
+	font-size: 14px;
 }
 
 .teamLink:hover {
@@ -507,6 +412,21 @@ Fixed hiring animation
 	to {
 		-webkit-transform: rotate(359deg);
 	}
+}
+
+.custom-tooltip {
+	display: inline-block;
+	margin: 0 auto;
+	opacity: 1;
+	position: relative;
+}
+
+.tooltip.left .tooltip-inner {
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.tooltip.left .tooltip-arrow {
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 /* ================================

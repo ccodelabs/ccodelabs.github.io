@@ -43,15 +43,31 @@ a:hover {
 }
 
 /* Tooltips */
-#team .tooltip.top .tooltip-inner,
-.tooltip.left .tooltip-inner {
-  background-color: #e64a19;
+.tooltip.top .tooltip-inner,
+.tooltip.left .tooltip-inner,
+#team .tooltip.bottom .tooltip-inner {
+  background-color: #d84315 !important;
 }
 
-#team .tooltip.top .tooltip-arrow {
-  border-top-color: #e64a19;
+#team .tooltip.bottom .tooltip-arrow {
+  border-bottom-color: #d84315 !important;
 }
 
 .tooltip.left .tooltip-arrow {
-  border-left-color: #e64a19;
+  border-left-color: #d84315;
+}
+
+.custom-tooltip {
+  display: inline-block;
+  margin: 0 auto;
+  opacity: 1;
+  position: relative;
+}
+
+.tooltip.left .tooltip-inner {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.tooltip.left .tooltip-arrow {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }

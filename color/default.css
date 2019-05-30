@@ -45,13 +45,13 @@ a:hover {
 /* Tooltips */
 #team .tooltip.top .tooltip-inner,
 .tooltip.left .tooltip-inner {
-  background-color: #d84315;
+  background-color: #e64a19;
 }
 
 #team .tooltip.top .tooltip-arrow {
-  border-top-color: #d84315;
+  border-top-color: #e64a19;
 }
 
 .tooltip.left .tooltip-arrow {
-  border-left-color: #d84315;
+  border-left-color: #e64a19;
 }

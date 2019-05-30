@@ -452,7 +452,7 @@ Devices adaptation
 Team
 ================================= */
 .box-team img {
-	margin-bottom: 30px;
+	margin-bottom: 10px !important;
 }
 
 .teamIMG {
@@ -466,15 +466,11 @@ Team
 	padding: 0% 3% 0% 3%;
 }
 
-.imgTeam{
-	margin-bottom: 5% !important;
-}
-
 .teamLink {
 	text-decoration: none;
 	/* no underline */
 	color: #ffffff;
-	font-size: 12px;
+	font-size: 15px;
 }
 
 .teamLink:hover {
@@ -1499,10 +1495,6 @@ more media queries
 	.box-team img {
 		float: none;
 		margin: 0 auto;
-	}
-
-	.box-team {
-		margin-bottom: 30px;
 	}
 
 	.og-fullimg {

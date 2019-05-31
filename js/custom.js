@@ -196,6 +196,7 @@
       });
     }
   }
+
   // define language reload anchors
   var dataReload = document.querySelectorAll("[data-reload]");
   // define language reload onclick iteration

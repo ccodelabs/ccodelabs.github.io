@@ -164,11 +164,6 @@
     }
   });
 
-  // Carousel
-  $('.service .carousel').carousel({
-    interval: 4000
-  })
-
   //works
   $(function () {
     Grid.init();
@@ -184,4 +179,28 @@
   })
   wow.init();
 
+  // define language via window hash
+  if (window.location.hash) {
+    if (window.location.hash === "#en") {
+      $.getJSON("json/en.json", function (data) {
+        $.each(data, function (key, val) {
+          key.textContent = val;
+        });
+      });
+    } else if (window.location.hash === "#pt") {
+      $.getJSON("json/pt.json", function (data) {
+        $.each(data, function (key, val) {
+          key.textContent = val;
+        });
+      });
+    }
+  }
+  // define language reload anchors
+  var dataReload = document.querySelectorAll("[data-reload]");
+  // define language reload onclick iteration
+  for (i = 0; i <= dataReload.length; i++) {
+    $(dataReload[i]).click(function () {
+      location.reload();
+    });
+  }
 })(jQuery);

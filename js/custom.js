@@ -183,6 +183,7 @@
   if (window.location.hash) {
     if (window.location.hash === "#en") {
       $.getJSON("json/en.json", function (data) {
+        console.log(data);
         $.each(data, function (key, val) {
           key.textContent = val;
         });

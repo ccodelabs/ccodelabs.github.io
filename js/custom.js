@@ -183,14 +183,13 @@
   if (window.location.hash) {
     if (window.location.hash === "#en") {
       $.getJSON("json/en.json", function (data) {
-        console.log(data);
-        $.each(data, function (key, val) {
+        $.each(data.en, function (key, val) {
           key.textContent = val;
         });
       });
     } else if (window.location.hash === "#pt") {
       $.getJSON("json/pt.json", function (data) {
-        $.each(data, function (key, val) {
+        $.each(data.pt, function (key, val) {
           key.textContent = val;
         });
       });

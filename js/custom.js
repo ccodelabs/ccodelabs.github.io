@@ -182,15 +182,15 @@
   // define language via window hash
   if (window.location.hash) {
     if (window.location.hash === "#en") {
-      $.getJSON("json/en.json", function (data) {
-        $.each(data.en, function (key, val) {
-          key.textContent = val;
+      $.getJSON("json/en.json", function (dataEN) {
+        $.each(dataEN.en[0], function (key, val) {
+          $("#" + key).html(val);
         });
       });
     } else if (window.location.hash === "#pt") {
-      $.getJSON("json/pt.json", function (data) {
-        $.each(data.pt, function (key, val) {
-          key.textContent = val;
+      $.getJSON("json/pt.json", function (dataPT) {
+        $.each(dataPT.pt[0], function (key, val) {
+          $("#" + key).html(val);
         });
       });
     }

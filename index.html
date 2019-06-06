@@ -14,6 +14,8 @@
   <link href="css/style.min.css?v=0.001" rel="stylesheet" media="screen" />
   <link href="color/default.min.css" rel="stylesheet" media="none" onload="if(media!='all')media='all'" />
   <link href="css/pace-theme-minimal.css" rel="stylesheet" media="none" onload="if(media!='all')media='all'" />
+  <link href="css/alertify.min.css" rel="stylesheet" media="none" onload="if(media!='all')media='all'" />
+  <link href="css/alertify.rtl.min.css" rel="stylesheet" media="none" onload="if(media!='all')media='all'" />
   <!-- Template Custom Javascript File -->
   <script>
     function downloadJSAtOnload() {
@@ -513,7 +515,8 @@
             <div class="col-md-offset-2 col-md-8">
               <div id="sendmessage">Your message has been sent. Thank you!</div>
               <div id="errormessage"></div>
-              <form method="post" class="form-horizontal contactForm">
+              <form id="formContact" method="POST" action="contactform/contactEmail.php"
+                class="form-horizontal contactForm">
                 <div class="col-md-offset-2 col-md-8">
                   <div class="form-group">
                     <div class="InputAddOn">
@@ -605,6 +608,8 @@
   <script src="js/tippy.all.min.js"></script>
   <!-- Progress indicator library -->
   <script src="js/pace.min.js"></script>
+  <!-- Alerts library -->
+  <script src="js/alertify.min.js"></script>
   <!-- Contact Form JavaScript File -->
   <script src="contactform/contactform.js" async></script>
 </body>

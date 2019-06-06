@@ -88,28 +88,26 @@ jQuery(document).ready(function ($) {
         i.next('.validation').html((ierror ? (i.attr('data-msg') != undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
       }
     });
-    if (ferror) return false;
-    else var str = $(this).serialize();
-    var action = $(this).attr('action');
-    if (!action) {
-      action = 'contactform/contactform.php';
-    }
+
+    var str = $(this).serializeArray();
+    var postData = new FormData();
+    $.each(str, function (i, val) {
+      postData.append(val.name, val.value);
+    });
+
     $.ajax({
       type: "POST",
-      url: action,
-      data: str,
-      success: function (msg) {
-        // alert(msg);
-        if (msg == 'OK') {
-          $("#sendmessage").addClass("show");
-          $("#errormessage").removeClass("show");
-          $('.contactForm').find("input, textarea").val("");
-        } else {
-          $("#sendmessage").removeClass("show");
-          $("#errormessage").addClass("show");
-          $('#errormessage').html(msg);
-        }
-
+      url: 'contactform/contactEmail.php',
+      data: postData,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function (result) {
+        alertify.success('Email enviado com sucesso');
+      },
+      error: function (err) {
+        console.log(err);
+        alertify.error('Erro ao enviar o email');
       }
     });
     return false;

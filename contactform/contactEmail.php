@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 // Import PHPMailer classes into the global namespace
 // These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
@@ -17,7 +20,7 @@ $dataPOST = $_POST;
 
 try {
     //Server settings
-    $mail->SMTPDebug = 1;                                       // Enable verbose debug output
+    $mail->SMTPDebug = 0;                                       // Enable verbose debug output
     $mail->isSMTP();                                            // Set mailer to use SMTP
     $mail->Host       = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
@@ -52,6 +55,6 @@ try {
     }
     //echo 'Message has been sent';
 } catch (Exception $e) {
-        echo $e;
-    //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    //echo $e;
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }

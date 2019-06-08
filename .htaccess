@@ -5,6 +5,10 @@
 # They assume you control versioning with filename-based cache busting
 # Additionally, consider that outdated proxies may miscache
 
+<Location "/">
+  AllowMethods GET POST OPTIONS
+</Location>
+
 <IfModule mod_expires.c>
   ExpiresActive on
 

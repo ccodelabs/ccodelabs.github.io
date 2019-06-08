@@ -136,7 +136,7 @@ jQuery(document).ready(function($) {
           }
         } catch (e) {
           $("#loadingScreen").fadeOut(300);
-          toastr.error(e, { timeOut: 2000 });
+          toastr.error(e.toString(), { timeOut: 2000 });
         }
       },
       error: function(err) {

@@ -116,6 +116,7 @@ jQuery(document).ready(function($) {
       postData.append(val.name, val.value);
     });
 
+    $.support.cors = true;
     $.ajax({
       type: "POST",
       url: "contactform/contactEmail.php",

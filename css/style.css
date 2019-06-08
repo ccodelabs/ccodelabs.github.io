@@ -39,7 +39,7 @@
 body {
 	text-align: center;
 	font-size: 14px;
-	line-height: 1.6em
+	line-height: 1.6em;
 }
 
 h1 {
@@ -117,9 +117,10 @@ textarea {
 	position: fixed;
 	top: 0;
 	left: 0;
+	padding: 0 !important;
 	height: 100%;
 	width: 100%;
-	z-index: 9999;
+	z-index: 99999;
 	flex-flow: row wrap;
 	justify-content: space-around;
 }
@@ -135,7 +136,7 @@ textarea {
 .loadingContainer .loader {
 	width: 10px;
 	height: 48px;
-	background: #0052ec;
+	background: #E64A19;
 	position: relative;
 	animation: loaderAnimation 1s ease-in-out infinite;
 	animation-delay: 0.4s;
@@ -149,7 +150,7 @@ textarea {
 	position: absolute;
 	width: 10px;
 	height: 48px;
-	background: #0052ec;
+	background: #E64A19;
 	animation: loaderAnimation 1s ease-in-out infinite;
 }
 
@@ -167,13 +168,15 @@ textarea {
 
 	0%,
 	100% {
-		box-shadow: 0 0 0 #0052ec, 0 0 0 #0052ec;
+		box-shadow: 0 0 0 #E64A19, 0 0 0 #E64A19;
 	}
 
 	50% {
-		box-shadow: 0 -8px 0 #0052ec, 0 8px 0 #0052ec;
+		box-shadow: 0 -8px 0 #E64A19, 0 8px 0 #E64A19;
 	}
 }
+
+/*******************************************************************/
 
 button {
 	display: inline-block;

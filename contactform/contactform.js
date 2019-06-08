@@ -116,7 +116,6 @@ jQuery(document).ready(function($) {
       postData.append(val.name, val.value);
     });
 
-    $.support.cors = true;
     $.ajax({
       type: "POST",
       url: "contactform/contactEmail.php",
@@ -139,12 +138,16 @@ jQuery(document).ready(function($) {
           $("#loadingScreen").fadeOut(300);
           toastr.error(e.toString(), { timeOut: 2000 });
         }
+        document.getElementById("ContactForm").reset();
+        $("#modalContact").modal("hide");
       },
       error: function(err) {
         console.log(err);
         // Display an error toast
         $("#loadingScreen").fadeOut(300);
         toastr.error("Error sending the e-mail", { timeOut: 2000 });
+        document.getElementById("ContactForm").reset();
+        $("#modalContact").modal("hide");
       }
     });
     return false;

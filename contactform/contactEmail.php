@@ -3,9 +3,8 @@
 // These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
-require 'src/Exception.php';
 require 'src/PHPMailer.php';
+require 'src/Exception.php';
 require 'src/SMTP.php';
 
 // Instantiation and passing `true` enables exceptions
@@ -17,9 +16,16 @@ $dataPOST = $_POST;
 
 try {
     //Server settings
-    $mail->SMTPDebug = 0;                                       // Enable verbose debug output
-    $mail->isSMTP();                                            // Set mailer to use SMTP
-    $mail->Host       = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
+    $mail->SMTPDebug = 1;                                       // Enable verbose debug output
+    $mail->isSMTP(true);                                            // Set mailer to use SMTP
+    $mail->SMTPOptions = array(
+        'ssl' => array(
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+        'allow_self_signed' => true
+        )
+    );
+    $mail->Host       = 'tls://smtp.gmail.com';                       // Specify main and backup SMTP servers
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = 'maseutestes@gmail.com';                // SMTP username
     $mail->Password   = 'metin2bustos';                         // SMTP password

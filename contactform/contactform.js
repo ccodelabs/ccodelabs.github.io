@@ -1,13 +1,13 @@
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
   "use strict";
 
   //Contact
-  $("form.contactForm").submit(function() {
+  $("form.contactForm").submit(function () {
     var f = $(this).find(".form-group"),
       ferror = false,
       emailExp = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
 
-    f.children("input").each(function() {
+    f.children("input").each(function () {
       // run all inputs
 
       var i = $(this); // current input
@@ -57,16 +57,16 @@ jQuery(document).ready(function($) {
         }
         i.next(".validation")
           .html(
-            ierror
-              ? i.attr("data-msg") !== undefined
-                ? i.attr("data-msg")
-                : "wrong Input"
-              : ""
+            ierror ?
+            i.attr("data-msg") !== undefined ?
+            i.attr("data-msg") :
+            "wrong Input" :
+            ""
           )
           .show("blind");
       }
     });
-    f.children("textarea").each(function() {
+    f.children("textarea").each(function () {
       // run all inputs
 
       var i = $(this); // current input
@@ -97,11 +97,11 @@ jQuery(document).ready(function($) {
         }
         i.next(".validation")
           .html(
-            ierror
-              ? i.attr("data-msg") != undefined
-                ? i.attr("data-msg")
-                : "wrong Input"
-              : ""
+            ierror ?
+            i.attr("data-msg") != undefined ?
+            i.attr("data-msg") :
+            "wrong Input" :
+            ""
           )
           .show("blind");
       }
@@ -112,7 +112,7 @@ jQuery(document).ready(function($) {
 
     var str = $(this).serializeArray();
     var postData = new FormData();
-    $.each(str, function(i, val) {
+    $.each(str, function (i, val) {
       postData.append(val.name, val.value);
     });
 
@@ -123,29 +123,37 @@ jQuery(document).ready(function($) {
       cache: false,
       contentType: false,
       processData: false,
-      success: function(result) {
+      success: function (result) {
         try {
           if ($.parseJSON(result).status === "success") {
             // Display an success toast
             $("#loadingScreen").fadeOut(300);
-            toastr.success("Email successfully sent", { timeOut: 2000 });
+            toastr.success("Email successfully sent", {
+              timeOut: 2000
+            });
           } else {
             // Display an error toast
             $("#loadingScreen").fadeOut(300);
-            toastr.error("Error sending the e-mail", { timeOut: 2000 });
+            toastr.error("Error sending the e-mail", {
+              timeOut: 2000
+            });
           }
         } catch (e) {
           $("#loadingScreen").fadeOut(300);
-          toastr.error(e.toString(), { timeOut: 2000 });
+          toastr.error(e.toString(), {
+            timeOut: 2000
+          });
         }
         document.getElementById("ContactForm").reset();
         $("#modalContact").modal("hide");
       },
-      error: function(err) {
+      error: function (err) {
         console.log(err);
         // Display an error toast
         $("#loadingScreen").fadeOut(300);
-        toastr.error("Error sending the e-mail", { timeOut: 2000 });
+        toastr.error("Error sending the e-mail", {
+          timeOut: 2000
+        });
         document.getElementById("ContactForm").reset();
         $("#modalContact").modal("hide");
       }

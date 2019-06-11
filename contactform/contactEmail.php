@@ -16,19 +16,12 @@ $dataPOST = $_POST;
 
 try {
     //Server settings
-    $mail->SMTPDebug = 1;                                       // Enable verbose debug output
-    $mail->isSMTP(true);                                            // Set mailer to use SMTP
-    $mail->SMTPOptions = array(
-        'ssl' => array(
-        'verify_peer' => false,
-        'verify_peer_name' => false,
-        'allow_self_signed' => true
-        )
-    );
-    $mail->Host       = 'tls://smtp.gmail.com';                       // Specify main and backup SMTP servers
+    $mail->SMTPDebug = 0;                                       // Enable verbose debug output
+    $mail->isSMTP();                                            // Set mailer to use SMTP
+    $mail->Host       = 'in-v3.mailjet.com';                       // Specify main and backup SMTP servers
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'maseutestes@gmail.com';                // SMTP username
-    $mail->Password   = 'metin2bustos';                         // SMTP password
+    $mail->Username   = '290c061e7a2b06792c555feebad1aae2';                // SMTP username
+    $mail->Password   = 'b0c032f507f833a037685cfaabf71c3a';                         // SMTP password
     $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
     $mail->Port       = 587;                                    // TCP port to connect to
 

@@ -523,7 +523,7 @@
             <div class="col-md-offset-2 col-md-8">
               <div id="sendmessage">Your message has been sent. Thank you!</div>
               <div id="errormessage"></div>
-              <form id="ContactForm" method="post" class="form-horizontal contactForm">
+              <form id="ContactForm" class="form-horizontal contactForm" action="https://mailthis.to/geral@ccode.pt" method="POST" encType="multipart/form-data">
                 <div class="col-md-offset-2 col-md-8">
                   <div class="form-group">
                     <div class="InputAddOn">
@@ -569,6 +569,10 @@
                       message</button>
                   </div>
                 </div>
+                <input type="hidden" name="_subject" value="Contact form submitted">
+                <input type="hidden" name="_after" value="https://ccode.pt/">
+                <input type="hidden" name="_honeypot" value="">
+                <input type="hidden" name="_confirmation" value="">
               </form>
             </div>
           </div>

@@ -110,7 +110,16 @@ jQuery(document).ready(function ($) {
     // Make visible loading screen
     $("#loadingScreen").fadeIn(300);
 
-    var str = $(this).serializeArray();
+    var url = this.attr("action");
+    var formData = $(this).serializeArray();
+    $.post(url, formData).done(function (data) {
+      $("#loadingScreen").fadeOut(300);
+      toastr.success("Email successfully sent", {
+        timeOut: 2000
+      });
+    });
+
+    /*var str = $(this).serializeArray();
     var postData = new FormData();
     $.each(str, function (i, val) {
       postData.append(val.name, val.value);
@@ -158,6 +167,6 @@ jQuery(document).ready(function ($) {
         $("#modalContact").modal("hide");
       }
     });
-    return false;
+    return false;*/
   });
 });

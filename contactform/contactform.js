@@ -7,7 +7,7 @@ jQuery(document).ready(function ($) {
       ferror = false,
       emailExp = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
 
-    f.children("input").each(function () {
+    f.children("input,select,textarea").each(function () {
       // run all inputs
 
       var i = $(this); // current input
@@ -25,13 +25,13 @@ jQuery(document).ready(function ($) {
 
         switch (rule) {
           case "required":
-            if (i.val() === "") {
+            if (i.val() === "" || i.files.length === 0) {
               ferror = ierror = true;
             }
             break;
 
           case "minlen":
-            if (i.val().length < parseInt(exp)) {
+            if (i.val().length < parseInt(exp) || $('#function').find(':selected').prop('disabled')===true) {
               ferror = ierror = true;
             }
             break;

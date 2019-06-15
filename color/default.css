@@ -57,6 +57,10 @@ a:hover {
   border-left-color: #e64a19;
 }
 
+#hiringForm .tooltip.top .tooltip-arrow {
+  border-top-color: #e64a19;
+}
+
 .custom-tooltip {
   display: inline-block;
   margin: 0 auto;

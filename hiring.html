@@ -172,15 +172,14 @@
           <div class="col-md-offset-2 col-md-8">
             <div id="sendmessage">Your message has been sent. Thank you!</div>
             <div id="errormessage"></div>
-            <form action="https://mailthis.to/geral@ccode.pt" method="POST" encType="multipart/form-data" class="form-horizontal contactForm">
+            <form id="hiringForm" action="https://mailthis.to/geral@ccode.pt" method="POST" encType="multipart/form-data" class="form-horizontal contactForm">
               <div class="col-md-offset-2 col-md-8">
                 <div class="form-group">
                   <div class="InputAddOn">
                     <span class="InputAddOn-item"><i class="fas fa-briefcase"></i></span>
                     <select class="InputAddOn-field form-control" name="function" id="function" placeholder="Function"
                       data-rule="minlen:4" data-msg="Please enter a valid function">
-                      <option disabled selected value> -- Select desired function -- </option>
-                      <option>Hardware Engineer</option>
+                      <option selected>Hardware Engineer</option>
                       <option>Software Engineer</option>
                       <option>Software Engineer</option>
                       <option>IT Support Technician</option>
@@ -224,18 +223,16 @@
               </div>
               <div class="col-md-offset-2 col-md-8">
                 <div class="form-group">
-                  <textarea class="form-control" name="message" rows="5" data-rule="required"
-                    data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <textarea class="form-control" name="message" rows="5" data-rule="minlen:15"
+                    data-msg="Please write something for us" placeholder="Message" required></textarea>
                   <div class="validation"></div>
                 </div>
               </div>
               <div class="col-md-offset-2 col-md-8">
                 <div class="form-group">
                   <div class="box">
-                    <input type="file" name="file" id="file" class="inputfile inputfile-6"
-                      data-multiple-caption="{count} files selected" multiple />
-                    <label for="file"><span></span> <strong><i class="fas fa-upload"></i>&nbsp;&nbsp;Upload
-                        CV</strong></label>
+                    <input type="file" name="file" id="file" class="inputfile inputfile-6" data-multiple-caption="{count} files selected" accept=".pdf,.html,.doc,.docx" required />
+                    <label for="file"><span></span> <strong><i class="fas fa-upload"></i>&nbsp;&nbsp;Upload CV</strong></label>
                   </div>
                 </div>
               </div>

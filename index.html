@@ -1,627 +1,411 @@
-<!DOCTYPE html>
-<html>
+<html __fvdsurfcanyoninserted="1"
+    class=" clickberry-extension clickberry-extension-standalone clickberry-extension clickberry-extension-standalone clickberry-extension clickberry-extension-standalone">
 
 <head>
-  <title>CCode</title>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="shortcut icon" href="img/logos/icon.ico" />
-  <!-- css -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" media="screen" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
-  <link href="css/style.css?v=0.001" rel="stylesheet" media="screen" />
-  <link href="color/default.min.css" rel="stylesheet" media="none" onload="if(media!='all')media='all'" />
-  <link href="css/pace-theme-minimal.css" rel="stylesheet" media="none" onload="if(media!='all')media='all'" />
-  <!-- Toastr Animation Styles -->
-  <link rel="stylesheet" href="css/toastr.min.css" />
-  <!-- Template Custom Javascript File -->
-  <script>
-    function downloadJSAtOnload() {
-      var element = document.createElement("script");
-      element.src = "js/custom.min.js";
-      document.body.appendChild(element);
-    }
-    if (window.addEventListener)
-      window.addEventListener("load", downloadJSAtOnload, false);
-    else if (window.attachEvent)
-      window.attachEvent("onload", downloadJSAtOnload);
-    else window.onload = downloadJSAtOnload;
-  </script>
+    <meta charset="UTF-8">
+    <title>Happy Birthday</title>
+    <style>
+        /* If you can't see it just hit space in here*/
+        body {
+            font-family: 'Wendy One', sans-serif;
+            background-image: url("https://scontent.fopo2-2.fna.fbcdn.net/v/t1.0-9/11951264_813991085381220_2373833517752001872_n.jpg?_nc_cat=106&_nc_oc=AQmxqtdKpk12NgOa5Rf1YK_pQWmV8txcYAbnWvHFOtQ66tJyURVVqAciGXwLorXjsxk&_nc_ht=scontent.fopo2-2.fna&oh=1bf30417d736766243293a14fe870783&oe=5DBE8B09");
+            background-color: #0f2027;
+            background-size: cover;
+        }
+
+        span {
+            text-transform: uppercase;
+        }
+
+        .low-shadow {
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        .container {
+            width: 800px;
+            height: 420px;
+            padding: 10px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .balloon {
+            width: 738px;
+            margin: 0 auto;
+            padding-top: 30px;
+            position: relative;
+        }
+
+        .balloon>div {
+            width: 104px;
+            height: 140px;
+            background: rgba(182, 15, 97, 0.9);
+            border-radius: 0;
+            border-radius: 80% 80% 80% 80%;
+            margin: 0 auto;
+            position: absolute;
+            padding: 10px;
+            box-shadow: inset 17px 7px 10px rgba(182, 15, 97, 0.9);
+            -webkit-transform-origin: bottom center;
+        }
+
+        .balloon>div:nth-child(1) {
+            background: rgba(182, 15, 97, 0.9);
+            left: 0;
+            box-shadow: inset 10px 10px 10px rgba(135, 11, 72, 0.9);
+            -webkit-animation: balloon1 6s ease-in-out infinite;
+            -moz-animation: balloon1 6s ease-in-out infinite;
+            -o-animation: balloon1 6s ease-in-out infinite;
+            animation: balloon1 6s ease-in-out infinite;
+        }
+
+        .balloon>div:nth-child(1):before {
+            color: rgba(182, 15, 97, 0.9);
+        }
+
+        .balloon>div:nth-child(2) {
+            background: rgba(242, 112, 45, 0.9);
+            left: 120px;
+            box-shadow: inset 10px 10px 10px rgba(222, 85, 14, 0.9);
+            -webkit-animation: balloon2 6s ease-in-out infinite;
+            -moz-animation: balloon2 6s ease-in-out infinite;
+            -o-animation: balloon2 6s ease-in-out infinite;
+            animation: balloon2 6s ease-in-out infinite;
+        }
+
+        .balloon>div:nth-child(2):before {
+            color: rgba(242, 112, 45, 0.9);
+        }
+
+        .balloon>div:nth-child(3) {
+            background: rgba(45, 181, 167, 0.9);
+            left: 240px;
+            box-shadow: inset 10px 10px 10px rgba(35, 140, 129, 0.9);
+            -webkit-animation: balloon4 6s ease-in-out infinite;
+            -moz-animation: balloon4 6s ease-in-out infinite;
+            -o-animation: balloon4 6s ease-in-out infinite;
+            animation: balloon4 6s ease-in-out infinite;
+        }
+
+        .balloon>div:nth-child(3):before {
+            color: rgba(45, 181, 167, 0.9);
+        }
+
+        .balloon>div:nth-child(4) {
+            background: rgba(190, 61, 244, 0.9);
+            left: 360px;
+            box-shadow: inset 10px 10px 10px rgba(173, 14, 240, 0.9);
+            -webkit-animation: balloon1 5s ease-in-out infinite;
+            -moz-animation: balloon1 5s ease-in-out infinite;
+            -o-animation: balloon1 5s ease-in-out infinite;
+            animation: balloon1 5s ease-in-out infinite;
+        }
+
+        .balloon>div:nth-child(4):before {
+            color: rgba(190, 61, 244, 0.9);
+        }
+
+        .balloon>div:nth-child(5) {
+            background: rgba(180, 224, 67, 0.9);
+            left: 480px;
+            box-shadow: inset 10px 10px 10px rgba(158, 206, 34, 0.9);
+            -webkit-animation: balloon3 5s ease-in-out infinite;
+            -moz-animation: balloon3 5s ease-in-out infinite;
+            -o-animation: balloon3 5s ease-in-out infinite;
+            animation: balloon3 5s ease-in-out infinite;
+        }
+
+        .balloon>div:nth-child(5):before {
+            color: rgba(180, 224, 67, 0.9);
+        }
+
+        .balloon>div:nth-child(6) {
+            background: rgba(242, 194, 58, 0.9);
+            left: 600px;
+            box-shadow: inset 10px 10px 10px rgba(234, 177, 15, 0.9);
+            -webkit-animation: balloon2 3s ease-in-out infinite;
+            -moz-animation: balloon2 3s ease-in-out infinite;
+            -o-animation: balloon2 3s ease-in-out infinite;
+            animation: balloon2 3s ease-in-out infinite;
+        }
+
+        .balloon>div:nth-child(6):before {
+            color: rgba(242, 194, 58, 0.9);
+        }
+
+        .balloon>div:before {
+            color: rgba(182, 15, 97, 0.9);
+            position: absolute;
+            bottom: -11px;
+            left: 52px;
+            content: "▲";
+            font-size: 1em;
+        }
+
+        span {
+            font-size: 4.8em;
+            color: white;
+            position: relative;
+            top: 30px;
+            left: 50%;
+            margin-left: -27px;
+        }
+
+        /*BALLOON 1 4*/
+        @-webkit-keyframes balloon1 {
+
+            0%,
+            100% {
+                -webkit-transform: translateY(0) rotate(-6deg);
+            }
+
+            50% {
+                -webkit-transform: translateY(-20px) rotate(8deg);
+            }
+        }
+
+        @-moz-keyframes balloon1 {
+
+            0%,
+            100% {
+                -moz-transform: translateY(0) rotate(-6deg);
+            }
+
+            50% {
+                -moz-transform: translateY(-20px) rotate(8deg);
+            }
+        }
+
+        @-o-keyframes balloon1 {
+
+            0%,
+            100% {
+                -o-transform: translateY(0) rotate(-6deg);
+            }
+
+            50% {
+                -o-transform: translateY(-20px) rotate(8deg);
+            }
+        }
+
+        @keyframes balloon1 {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-6deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(8deg);
+            }
+        }
+
+        /* BAllOON 2 5*/
+        @-webkit-keyframes balloon2 {
+
+            0%,
+            100% {
+                -webkit-transform: translateY(0) rotate(6eg);
+            }
+
+            50% {
+                -webkit-transform: translateY(-30px) rotate(-8deg);
+            }
+        }
+
+        @-moz-keyframes balloon2 {
+
+            0%,
+            100% {
+                -moz-transform: translateY(0) rotate(6deg);
+            }
+
+            50% {
+                -moz-transform: translateY(-30px) rotate(-8deg);
+            }
+        }
+
+        @-o-keyframes balloon2 {
+
+            0%,
+            100% {
+                -o-transform: translateY(0) rotate(6deg);
+            }
+
+            50% {
+                -o-transform: translateY(-30px) rotate(-8deg);
+            }
+        }
+
+        @keyframes balloon2 {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(6deg);
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(-8deg);
+            }
+        }
+
+        /* BAllOON 0*/
+        @-webkit-keyframes balloon3 {
+
+            0%,
+            100% {
+                -webkit-transform: translate(0, -10px) rotate(6eg);
+            }
+
+            50% {
+                -webkit-transform: translate(-20px, 30px) rotate(-8deg);
+            }
+        }
+
+        @-moz-keyframes balloon3 {
+
+            0%,
+            100% {
+                -moz-transform: translate(0, -10px) rotate(6eg);
+            }
+
+            50% {
+                -moz-transform: translate(-20px, 30px) rotate(-8deg);
+            }
+        }
+
+        @-o-keyframes balloon3 {
+
+            0%,
+            100% {
+                -o-transform: translate(0, -10px) rotate(6eg);
+            }
+
+            50% {
+                -o-transform: translate(-20px, 30px) rotate(-8deg);
+            }
+        }
+
+        @keyframes balloon3 {
+
+            0%,
+            100% {
+                transform: translate(0, -10px) rotate(6eg);
+            }
+
+            50% {
+                transform: translate(-20px, 30px) rotate(-8deg);
+            }
+        }
+
+        /* BAllOON 3*/
+        @-webkit-keyframes balloon4 {
+
+            0%,
+            100% {
+                -webkit-transform: translate(10px, -10px) rotate(-8eg);
+            }
+
+            50% {
+                -webkit-transform: translate(-15px, 20px) rotate(10deg);
+            }
+        }
+
+        @-moz-keyframes balloon4 {
+
+            0%,
+            100% {
+                -moz-transform: translate(10px, -10px) rotate(-8eg);
+            }
+
+            50% {
+                -moz-transform: translate(-15px, 10px) rotate(10deg);
+            }
+        }
+
+        @-o-keyframes balloon4 {
+
+            0%,
+            100% {
+                -o-transform: translate(10px, -10px) rotate(-8eg);
+            }
+
+            50% {
+                -o-transform: translate(-15px, 10px) rotate(10deg);
+            }
+        }
+
+        @keyframes balloon4 {
+
+            0%,
+            100% {
+                transform: translate(10px, -10px) rotate(-8eg);
+            }
+
+            50% {
+                transform: translate(-15px, 10px) rotate(10deg);
+            }
+        }
+
+        h1 {
+            position: relative;
+            top: 200px;
+            text-align: center;
+            color: white;
+            font-size: 3.5em;
+        }
+    </style>
+    <script>
+        window.open = function () {};
+        window.print = function () {};
+        // Support hover state for mobile.
+        if (false) {
+            window.ontouchstart = function () {};
+        }
+    </script>
+    <script type="text/javascript" src="chrome-extension://bfbmjmiodbnnpllbbbfblcplfjjepjdn/js/injected.js"></script>
+    <meta content="clickberry-extension-here">
+    <meta content="clickberry-extension-here">
+    <style type="text/css"></style>
+    <style type="text/css"></style>
+    <style type="text/css"></style>
+    <style type="text/css"></style>
+    <script type="text/javascript" src="chrome-extension://bfbmjmiodbnnpllbbbfblcplfjjepjdn/js/injected.js"></script>
+    <meta content="clickberry-extension-here">
 </head>
 
 <body>
-  <!-- ==============================================
-             **LOADING SCREEN**
-         =============================================== -->
-  <div id="loadingScreen" class="loadingContainer" hidden>
-    <div class="item">
-      <div class="loader"></div>
-    </div>
-  </div>
-  <!-- Navigation -->
-  <nav class="navbar navbar-default" role="navigation">
+    <link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet" type="text/css">
     <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-          <span class="sr-only">Toggle navbar</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <!-- Logo text or image -->
-        <a class="navbar-brand" href="index.html">
-          <picture>
-            <source class="noselect" srcset="img/logos/logo.webp" type="image/webp"
-              style="height: 100%; width: auto; max-width: 100%;">
-            <img class="noselect" src="img/logos/logo.jpg" alt="logo"
-              style="height: 100%; width: auto; max-width: 100%;">
-          </picture>
-        </a>
-      </div>
-      <div class="navigation collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav">
-          <li class="current"><a id="introNav" href="#intro">Home</a></li>
-          <li><a id="aboutNav" href="#about">About</a></li>
-          <li><a id="servicesNav" href="#services">What We Do</a></li>
-          <li><a id="teamNav" href="#team">Team</a></li>
-          <li><a id="bottomWidgetNav" href="#bottom-widget">Contact</a></li>
-          <li>
-            <a href="#en"><img class="imgFlag" src="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg"
-                alt="english" height="15" width="20"></a>
-          </li>
-          <li>
-            <a href="#pt"><img class="imgFlag" src="https://lipis.github.io/flag-icon-css/flags/4x3/pt.svg"
-                alt="portuguese" height="15" width="20"></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div id="fixedHiring" class="fixedHiring animated fadeInDown workGPU" style="display: none;">
-    <div role="tooltip" class="tooltip left custom-tooltip">
-      <div class="tooltip-arrow"></div>
-      <div class="tooltip-inner">
-        <div class='row' style='font-size:16px'>
-          <div class='col-md-12'>
-            <b><i class='fa fa-handshake-o'></i></b>
-            <span><b id="_tooltipHiring">&nbsp;We are hiring!</b></span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <a target="hiringWindow" href="hiring.html">
-      <picture>
-        <source class="noselect workGPU" srcset="img/logos/logo_3.webp" type="image/webp" alt="hiring">
-        <img class="noselect workGPU" src="img/logos/logo_3.jpg" alt="hiring">
-      </picture>
-    </a>
-  </div>
-  <!-- intro area -->
-  <section id="intro">
-    <div class="intro-container">
-      <div id="introCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-        <div class="carousel-inner" role="listbox">
-          <!-- Slide 1 -->
-          <div class="item active">
-            <div class="carousel-background">
-              <picture>
-                <source class="noselect" srcset="img/intro/0.webp" type="image/webp" alt="CCode">
-                <img class="noselect" src="img/intro/0.jpg" alt="CCode">
-              </picture>
+        <div class="balloon">
+            <div class="low-shadow"><span>☺</span>
             </div>
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <p class="wow fadeInUp" data-wow-delay="0.3s">
-                  <picture>
-                    <source class="noselect" srcset="img/logos/logo_2.webp" type="image/webp" height="70%" width="70%">
-                    <img class="noselect" src="img/logos/logo_2.jpg" alt="" height="70%" width="70%" />
-                  </picture>
-                </p>
-                <div class="wow fadeInDown introTitle noselect workGPU" data-wow-delay="0.5s">
-                  <div>
-                    <h2 id="_oneWordHome" class="workGPU">Innovation</h2>
-                  </div>
-                  <div>
-                    <h2 id="_otherWordsHome" class="workGPU">&nbsp;and Engineering at your Service</h2>
-                  </div>
-                </div>
-                <a href="#about" class="btn-get-started wow fadeInUp noselect workGPU" data-wow-delay="0.3s"><span
-                    id="_buttonHome">Find
-                    Out More</span></a>
-              </div>
+            <div class="low-shadow"><span>C</span>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- About -->
-  <section id="about" class="home-section bg-white low-shadow">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-offset-2 col-md-8">
-          <div class="section-heading">
-            <h2 id="_aboutUsTitle">About us</h2>
-            <div class="heading-line"></div>
-          </div>
-        </div>
-      </div>
-      <div class="row aboutInfo">
-        <div class="col-md-6 about-img">
-          <picture>
-            <source class="noselect" srcset="img/others/about.webp" type="image/webp">
-            <img class="noselect" src="img/others/about.jpg" alt="">
-          </picture>
-        </div>
-        <div class="col-md-6 content">
-          <h3 id="_aboutUsSubTitle">Help you with your new challenge!</h3>
-          <p id="_aboutUsText_1">&emsp;CCode is a young company, where you can focus on new and different technology
-            fields related to
-            Electronics, so we are proud to share that we are never bored!</p>
-          <p id="_aboutUsText_2">&emsp;Our operations are focused on the industrialization of new solutions and help
-            customers to launch and
-            maintain their new products into the market. Bonded to this activity, we provide knowledge of Mechanics,
-            Electronics and Software development, where embedded systems are the main focus. We are also strong on
-            industrialization of test cases involving Hardware and Software, with a wide knowledge of electronic
-            production.</p>
-          <p id="_aboutUsText_3">&emsp;CCode was born in 2016 due to a partnership with a group of companies in
-            Switzerland, where we have
-            been
-            able to launch several products with large success in world wide market, using our industrialization
-            processes, test cases and production knowledge.</p>
-          <p id="_aboutUsText_4">Our target is to grow sustainable and help you with your new challenge!</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Parallax 1 -->
-  <section id="parallax1" class="home-section parallax workGPU" data-stellar-background-ratio="0.5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="color-light noselect">
-            <p id="_firstParallax_1" class="lead"><i>"We want to hear your needs and help you with our
-                expertise and partners to achieve your goals together"</i></p>
-            <p id="_firstParallax_2" class="lead"><i>"Satisfying our customers is our number one
-                rule!"</i></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Services -->
-  <section id="services" class="home-section bg-white">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-offset-2 col-md-8">
-          <div class="section-heading aboutUS">
-            <h2 id="_servicesTitle">What We Do</h2>
-            <h3 id="_servicesSubTitle">We are committed to act in several fields, and provide professional services
-              in a large range of areas
-            </h3>
-            <div class="heading-line"></div>
-            <p></p>
-          </div>
-        </div>
-      </div>
-      <div class="card first">
-        <div class="row">
-          <div class="col-md-2">
-            <picture>
-              <source class="noselect" srcset="img/services/icon_1.webp" type="image/webp" alt="icon_1">
-              <img class="noselect" src="img/services/icon_1.jpg" alt="icon_1">
-            </picture>
-          </div>
-          <div class="col-md-10">
-            <div class="card-body">
-              <h5 id="_firstCard_1" class="card-title">Long term dedicated Teams for Engineering Services & Consulting
-              </h5>
-              <p id="_firstCard_2" class="card-text">We can create a dedicated team to meet your needs and necessities,
-                being 100%
-                available for you</p>
-              <p id="_firstCard_3" class="card-text">They can be managed by you or us but always under CCode
-                responsability</p>
+            <div class="low-shadow"><span>Y</span>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="card second">
-        <div class="row">
-          <div class="col-md-10">
-            <div class="card-body">
-              <h5 id="_secondCard_1" class="card-title">Electronic Production Optimization / Management Consulting</h5>
-              <p id="_secondCard_2" class="card-text">We have expertise in EMS (Electronic Manufacturing Services) where
-                we have partners
-                being possible provide optimization mainly in BOM price and also teach you the best practices to follow
-              </p>
-              <p id="_secondCard_3" class="card-text">If you don't have any experience with electronic manufacturing,
-                don't be afraid! We
-                can manage that for
-                you</p>
+            <div class="low-shadow"><span>N</span>
             </div>
-          </div>
-          <div class="col-md-2">
-            <picture>
-              <source class="noselect" srcset="img/services/icon_2.webp" type="image/webp" alt="icon_2">
-              <img class="noselect" src="img/services/icon_2.jpg" alt="icon_2">
-            </picture>
-          </div>
-        </div>
-      </div>
-      <div class="card third">
-        <div class="row">
-          <div class="col-md-2">
-            <picture>
-              <source class="noselect" srcset="img/services/icon_3.webp" type="image/webp" alt="icon_3">
-              <img class="noselect" src="img/services/icon_3.jpg" alt="icon_3">
-            </picture>
-          </div>
-          <div class="col-md-10">
-            <div class="card-body">
-              <h5 id="_thirdCard_1" class="card-title">OEM Product Industrialization</h5>
-              <p id="_thirdCard_2" class="card-text">You have a special customer ?</p>
-              <p id="_thirdCard_3" class="card-text">He needs a special product ?</p>
-              <p id="_thirdCard_4" class="card-text">We can help you with the
-                customization of your electronic, case, stickers and product design to meet your customer needs</p>
+            <div class="low-shadow"><span>E</span>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Works -->
-  <section id="team" class="home-section bg-gray">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-offset-2 col-md-8">
-          <div class="section-heading">
-            <h2 id="_ourTeamTitle">Our Team</h2>
-            <div class="heading-line"></div>
-            <p></p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-          <div id="teamIMG" class="box-team">
-            <picture>
-              <source class="img-circle img-responsive low-shadow teamIMG imgTeam noselect" srcset="img/team/1.webp"
-                type="image/webp" />
-              <img class="img-circle img-responsive low-shadow teamIMG imgTeam noselect" src="img/team/1.jpg"
-                alt="Mário Almeida" />
-            </picture>
-            <div role="tooltip" class="tooltip bottom custom-tooltip">
-              <div class="tooltip-arrow"></div>
-              <div class="tooltip-inner" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
-                <div class='row' style='font-size:16px'>
-                  <div class='col-md-6'>
-                    <b><a class='teamLink' href='mailto:ma@ccode.pt'><i class='fa fa-envelope'></i></a></b>
-                  </div>
-                  <div class='col-md-6'>
-                    <b><a class='teamLink' target='_blank' rel='noopener noreferrer'
-                        href='https://www.linkedin.com/in/m%C3%A1rio-almeida-03181593/'><i
-                          class='fa fa-linkedin'></i></a></b>
-                  </div>
-                </div>
-              </div>
+            <div class="low-shadow"><span>D</span>
             </div>
-            <h5>Mário Almeida</h5>
-            <p id="_funcTeam_1">CEO & Co-Founder</p>
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-          <div id="teamIMG" class="box-team">
-            <picture>
-              <source class="img-circle img-responsive low-shadow teamIMG imgTeam noselect" srcset="img/team/2.webp"
-                type="image/webp" />
-              <img class="img-circle img-responsive low-shadow teamIMG imgTeam noselect" src="img/team/2.jpg"
-                alt="Marcelo Coelho" />
-            </picture>
-            <div role="tooltip" class="tooltip bottom custom-tooltip">
-              <div class="tooltip-arrow"></div>
-              <div class="tooltip-inner" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
-                <div class='row' style='font-size:16px'>
-                  <div class='col-md-6'>
-                    <b><a class='teamLink' href='mailto:mc@ccode.pt'><i class='fa fa-envelope'></i></a></b>
-                  </div>
-                  <div class='col-md-6'>
-                    <b><a class='teamLink' target='_blank' rel='noopener noreferrer'
-                        href='https://www.linkedin.com/in/mdcoelho/'><i class='fa fa-linkedin'></i></a></b>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <h5>Marcelo Coelho</h5>
-            <p id="_funcTeam_2">COO & Co-Founder</p>
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-          <div id="teamIMG" class="box-team">
-            <picture>
-              <source class="img-circle img-responsive low-shadow teamIMG imgTeam noselect" srcset="img/team/3.webp"
-                type="image/webp" />
-              <img class="img-circle img-responsive low-shadow teamIMG imgTeam noselect" src="img/team/3.jpg"
-                alt="António Almeida" />
-            </picture>
-            <div role="tooltip" class="tooltip bottom custom-tooltip">
-              <div class="tooltip-arrow"></div>
-              <div class="tooltip-inner" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
-                <div class='row' style='font-size:16px'>
-                  <div class='col-md-6'>
-                    <b><a class='teamLink' href='mailto:aa@ccode.pt'><i class='fa fa-envelope'></i></a></b>
-                  </div>
-                  <div class='col-md-6'>
-                    <b><a class='teamLink' target='_blank' rel='noopener noreferrer'
-                        href='https://www.linkedin.com/in/ant%C3%B3nio-almeida-04425613/'><i
-                          class='fa fa-linkedin'></i></a></b>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <h5>António Almeida</h5>
-            <p id="_funcTeam_3">CFO & Co-Founder</p>
-          </div>
-        </div>
-        <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-          <div id="teamIMG" class="box-team">
-            <picture>
-              <source class="img-circle img-responsive low-shadow teamIMG imgTeam noselect" srcset="img/team/4.webp"
-                type="image/webp" />
-              <img class="img-circle img-responsive low-shadow teamIMG imgTeam noselect" src="img/team/4.jpg"
-                alt="João Oliveira" />
-            </picture>
-            <div role="tooltip" class="tooltip bottom custom-tooltip">
-              <div class="tooltip-arrow"></div>
-              <div class="tooltip-inner" style="box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
-                <div class='row' style='font-size:16px'>
-                  <div class='col-md-6'>
-                    <b><a class='teamLink' href='mailto:jb@ccode.pt'><i class='fa fa-envelope'></i></a></b>
-                  </div>
-                  <div class='col-md-6'>
-                    <b><a class='teamLink' target='_blank' rel='noopener noreferrer'
-                        href='https://www.linkedin.com/in/jotapebatista/'><i class='fa fa-linkedin'></i></a></b>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <h5>João Oliveira</h5>
-            <p id="_funcTeam_4">IT Technician</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Parallax 2 -->
-  <section id="parallax2" class="home-section parallax workGPU" data-stellar-background-ratio="0.5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <ul class="clients">
-            <li>
-              <a target="qibaWindow" href="https://qiba.pt/">
-                <picture>
-                  <source class="noselect shadowedIMG" srcset="img/clients/1.webp" type="image/webp" alt="qiba">
-                  <img class="noselect shadowedIMG" src="img/clients/1.jpg" alt="qiba" />
-                </picture>
-              </a>
-            </li>
-            <li>
-              <a target="barixWindow" href="https://www.barix.com/">
-                <picture>
-                  <source class="noselect shadowedIMG" srcset="img/clients/2.webp" type="image/webp" alt="barix">
-                  <img class="noselect shadowedIMG" src="img/clients/2.jpg" alt="barix" />
-                </picture>
-              </a>
-            </li>
-            <li>
-              <a target="qibixxWindow" href="https://www.qibixx.com/pt/">
-                <picture>
-                  <source class="noselect shadowedIMG" srcset="img/clients/3.webp" type="image/webp" alt="qibixx">
-                  <img class="noselect shadowedIMG" src="img/clients/3.jpg" alt="qibixx" />
-                </picture>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Bottom widget -->
-  <section id="bottom-widget" class="home-section bg-white">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="contact-widget contact-interaction workGPU" data-toggle="modal" data-target="#modalLocation"
-            style="cursor:pointer;">
-            <i class="fa fa-map-marker fa-4x"></i>
-            <h5 id="_office_1">Main Office</h5>
-            <p id="_office_2">Rua Engenheiro Carlos Bóia,<br />3810-702 Aveiro</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="contact-widget">
-            <i class="fa fa-phone fa-4x"></i>
-            <h5 id="_call">Call us</h5>
-            <p>234 092 937</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="contact-widget contact-interaction workGPU" data-toggle="modal" data-target="#modalContact"
-            style="cursor:pointer;">
-            <i class="fa fa-envelope fa-4x"></i>
-            <h5 id="_email">Email us</h5>
-            <p>geral@ccode.pt</p>
-          </div>
-        </div>
-      </div>
-      <div class="row mar-top30">
-        <div class="col-md-12">
-          <h5 id="_socialTitle">We're on social networks</h5>
-          <ul class="social-network">
-            <li><a target="facebookWindow" href="https://www.facebook.com/CCode.2016/">
-                <span class="fa-stack fa-2x">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                </span></a>
-            </li>
-            <li><a target="linkedinWindow" href="https://www.linkedin.com/company/ccodelda/">
-                <span class="fa-stack fa-2x">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                </span></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <p>Copyright &copy; CCode. All rights reserved.</p>
-        </div>
-      </div>
-    </div>
-    </div>
-  </footer>
-  <!-- Modal Location -->
-  <div class="modal fade workGPU" id="modalLocation" tabindex="-1" role="dialog" aria-labelledby="modalLocation"
-    aria-hidden="true" style="z-index: 9999;">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-      <div class="modal-content" style="border-radius:15px;">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h5 id="_mapLocation" class="modal-title d-flex align-content-end flex-wrap" id="exampleModalLocation">Map
-            Location</h5>
-        </div>
-        <div id="googleMap" class="low-shadow"
-          style="width:100%;height:400px; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;"></div>
-      </div>
-    </div>
-  </div>
+            <h1 style="text-shadow: 6px 6px 0px rgba(0,0,0,0.2);">Happy Birthday @João Oliveira</h1>
 
-  <!-- Modal Contact -->
-  <div class="modal fade workGPU" id="modalContact" tabindex="-1" role="dialog" aria-labelledby="modalContact"
-    aria-hidden="true" style="z-index: 9999;">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-      <div class="modal-content" style="border-radius:15px;">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h5 id="_contactUs" class="modal-title d-flex align-content-end flex-wrap" id="exampleModalContact">Contact us
-          </h5>
         </div>
-        <div class="modal-body" style="padding: 5%; width: 100%;">
-          <div class="row">
-            <div class="col-md-offset-2 col-md-8">
-              <div id="sendmessage">Your message has been sent. Thank you!</div>
-              <div id="errormessage"></div>
-              <form id="ContactForm" class="form-horizontal contactForm" action="https://mailthis.to/geral@ccode.pt" method="POST" encType="multipart/form-data">
-                <div class="col-md-offset-2 col-md-8">
-                  <div class="form-group">
-                    <div class="InputAddOn">
-                      <span class="InputAddOn-item"><i class="fas fa-user"></i></span>
-                      <input id="_nameModal" type="text" name="name" class="InputAddOn-field form-control"
-                        placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 characters"
-                        required />
-                    </div>
-                    <div class="validation"></div>
-                  </div>
-                </div>
-                <div class="col-md-offset-2 col-md-8">
-                  <div class="form-group">
-                    <div class="InputAddOn">
-                      <span class="InputAddOn-item"><i class="fas fa-at"></i></span>
-                      <input id="_emailModal" type="email" class="InputAddOn-field form-control" name="email" id="email"
-                        placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" required />
-                    </div>
-                    <div class="validation"></div>
-                  </div>
-                </div>
-                <div class="col-md-offset-2 col-md-8">
-                  <div class="form-group">
-                    <div class="InputAddOn">
-                      <span class="InputAddOn-item"><i class="fas fa-pen"></i></span>
-                      <input id="_subjectModal" type="text" class="InputAddOn-field form-control" name="subject"
-                        id="subject" placeholder="Subject" data-rule="minlen:4"
-                        data-msg="Please enter at least 8 characters" required />
-                    </div>
-                    <div class="validation"></div>
-                  </div>
-                </div>
-                <div class="col-md-offset-2 col-md-8">
-                  <div class="form-group">
-                    <textarea id="_messageModal" class="form-control" name="message" rows="5" data-rule="required"
-                      data-msg="Please write something for us" placeholder="Message" required></textarea>
-                    <div class="validation"></div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-md-offset-2 col-md-8">
-                    <button id="submitContact" type="submit" class="btn btn-theme btn-lg btn-block">Send
-                      message</button>
-                  </div>
-                </div>
-                <input type="hidden" name="_subject" value="Contact form submitted">
-                <input type="hidden" name="_after" value="https://ccode.pt/">
-                <input type="hidden" name="_honeypot" value="">
-                <input type="hidden" name="_confirmation" value="">
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-  <script>
-    function initMap() {
-      var myLatlng = {
-        lat: 40.625216,
-        lng: -8.644823
-      };
-      var map = new google.maps.Map(document.getElementById('googleMap'), {
-        zoom: 15,
-        center: myLatlng,
-        disableDefaultUI: true
-      });
-      var marker = new google.maps.Marker({
-        position: myLatlng,
-        map: map
-      });
-    }
-  </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqhId3qv1xvUEEpqhLgBcd9L_eo6uHtIo&callback=initMap">
-  </script>
-  <!-- js -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/wow.min.js"></script>
-  <script src="js/jquery.scrollTo.min.js"></script>
-  <script src="js/jquery.nav.min.js"></script>
-  <!-- Modernizr JS -->
-  <script src="js/modernizr.custom.min.js"></script>
-  <script src="js/grid.min.js"></script>
-  <script src="js/stellar.min.js"></script>
-  <script src="js/app.min.js"></script>
-  <!-- Modernizr Custom JS -->
-  <script src="js/modernizr-custom.min.js"></script>
-  <!-- Tippy and Popper JS+CSS Files -->
-  <script src="js/popper.min.js"></script>
-  <script src="js/tippy.all.min.js"></script>
-  <!-- Progress indicator library -->
-  <script src="js/pace.min.js"></script>
-  <!-- Toastr Animation Scripts -->
-  <script src="js/toastr.min.js"></script>
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js" async></script>
+        <script>
+
+        </script>
+        <script>
+            if (document.location.search.match(/type=embed/gi)) {
+                window.parent.postMessage('resize', "*");
+            }
+            setTimeout(function () {
+                window.location.href = "https://ccode.pt/index_ccode.html";
+            }, 3000);
+        </script>
+
+
 </body>
 
 </html>

@@ -1,6 +1,6 @@
-(function($) {
+(function ($) {
   // Back to top button
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $(".back-to-top").fadeIn("slow");
       /* REMOVE/COMMENT THIS TO DELETE HIRING */
@@ -12,9 +12,8 @@
     }
   });
 
-  $(".back-to-top").click(function() {
-    $("html, body").animate(
-      {
+  $(".back-to-top").click(function () {
+    $("html, body").animate({
         scrollTop: 0
       },
       800
@@ -27,17 +26,16 @@
     scrollOffset: 0
   });
 
-  $(".navbar-collapse a").on("click", function() {
+  $(".navbar-collapse a").on("click", function () {
     $(".navbar-collapse.collapse").removeClass("in");
   });
 
   // Smooth scroll for the get started button
-  $(".btn-get-started").on("click", function(e) {
+  $(".btn-get-started").on("click", function (e) {
     e.preventDefault();
     var target = $(this.hash);
     if (target.length) {
-      $("html, body").animate(
-        {
+      $("html, body").animate({
           scrollTop: target.offset().top
         },
         700
@@ -52,7 +50,7 @@
   var bottomWidget = $("#bottom-widget").offset().top;
 
   // Fixed navbar
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     var scrollTop = $(window).scrollTop();
     if (scrollTop > 200) {
       $(".navbar-default").css("display", "block");
@@ -101,31 +99,31 @@
   introCarousel
     .find(".carousel-inner")
     .children(".item")
-    .each(function(index) {
-      index === 0
-        ? introCarouselIndicators.append(
-            "<li data-target='#introCarousel' data-slide-to='" +
-              index +
-              "' class='active'></li>"
-          )
-        : introCarouselIndicators.append(
-            "<li data-target='#introCarousel' data-slide-to='" +
-              index +
-              "'></li>"
-          );
+    .each(function (index) {
+      index === 0 ?
+        introCarouselIndicators.append(
+          "<li data-target='#introCarousel' data-slide-to='" +
+          index +
+          "' class='active'></li>"
+        ) :
+        introCarouselIndicators.append(
+          "<li data-target='#introCarousel' data-slide-to='" +
+          index +
+          "'></li>"
+        );
       var tempThis = this;
       // Check if browser support webp image format
-      Modernizr.on("webp", function(result) {
+      Modernizr.on("webp", function (result) {
         if (result) {
           $(tempThis).css(
             "background-image",
             "url('" +
-              $(tempThis)
-                .children(".carousel-background")
-                .children("picture")
-                .children("source")
-                .attr("srcset") +
-              "')"
+            $(tempThis)
+            .children(".carousel-background")
+            .children("picture")
+            .children("source")
+            .attr("srcset") +
+            "')"
           );
           $(tempThis)
             .children(".carousel-background")
@@ -134,12 +132,12 @@
           $(tempThis).css(
             "background-image",
             "url('" +
-              $(tempThis)
-                .children(".carousel-background")
-                .children("picture")
-                .children("img")
-                .attr("src") +
-              "')"
+            $(tempThis)
+            .children(".carousel-background")
+            .children("picture")
+            .children("img")
+            .attr("src") +
+            "')"
           );
           $(tempThis)
             .children(".carousel-background")
@@ -174,28 +172,28 @@
     }
   }
 
-  $(document).ready(function() {
+  $(document).ready(function () {
     var browserWidth = $(window).width();
 
     if (browserWidth > 560) {
-      $(window).scroll(function() {
+      $(window).scroll(function () {
         navbar();
       });
     }
   });
 
-  $(window).resize(function() {
+  $(window).resize(function () {
     var browserWidth = $(window).width();
 
     if (browserWidth > 560) {
-      $(window).scroll(function() {
+      $(window).scroll(function () {
         navbar();
       });
     }
   });
 
   //works
-  $(function() {
+  $(function () {
     Grid.init();
   });
 
@@ -212,21 +210,21 @@
   // define language via window hash
   if (window.location.hash) {
     if (window.location.hash === "#en") {
-      $.getJSON("json/en.json", function(dataEN) {
-        $.each(dataEN.en[0], function(key, val) {
+      $.getJSON("json/en.json", function (dataEN) {
+        $.each(dataEN.en[0], function (key, val) {
           $("#" + key).html(val);
         });
       });
     } else if (window.location.hash === "#pt") {
-      $.getJSON("json/pt.json", function(dataPT) {
-        $.each(dataPT.pt[0], function(key, val) {
+      $.getJSON("json/pt.json", function (dataPT) {
+        $.each(dataPT.pt[0], function (key, val) {
           $("#" + key).html(val);
         });
       });
     }
   }
   // reload page on hash change
-  $(window).on("hashchange", function() {
+  $(window).on("hashchange", function () {
     location.reload();
   });
 })(jQuery);

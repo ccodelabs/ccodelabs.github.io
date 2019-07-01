@@ -9,6 +9,10 @@
 
 /* Happy Birthday section */
 /*******************************************************************/
+.paddingHB{
+	padding: 15% 0% 15% 0% !important;
+}
+
 .balloon {
 	width: 120px;
 	height: 145px;

@@ -12,7 +12,8 @@
 .balloon {
 	width: 120px;
 	height: 145px;
-	background: hsl(215, 50%, 65%);
+	padding-top: 5%;
+	background: #f05f40;
 	border-radius: 80%;
 	position: relative;
 	box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.07);
@@ -38,7 +39,7 @@
 .balloon:before {
 	content: "▲";
 	font-size: 20px;
-	color: hsl(215, 30%, 50%);
+	color: #f05f40;
 	display: block;
 	text-align: center;
 	width: 100%;

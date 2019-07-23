@@ -597,7 +597,8 @@ button.navbar-toggle {
 	width: 70%;
 	display: block;
 	margin-left: auto;
-	margin-right: auto
+	margin-right: auto;
+	background: linear-gradient(270deg,#f05f40,#ff7043,#e64a19) !important;
 }
 
 .teamIMGRow {

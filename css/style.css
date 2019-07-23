@@ -9,7 +9,7 @@
 
 /* Happy Birthday section */
 /*******************************************************************/
-.paddingHB{
+.paddingHB {
 	padding: 15% 0% 15% 0% !important;
 }
 
@@ -97,6 +97,7 @@
 .balloon:nth-child(5):before {
 	color: hsl(23, 44%, 46%);
 }
+
 /*******************************************************************/
 
 .workGPU {
@@ -155,7 +156,7 @@ h5 {
 }
 
 h6 {
-	font-size: 18px
+	font-size: 16px
 }
 
 .h1,
@@ -593,12 +594,15 @@ button.navbar-toggle {
 }
 
 .teamIMG {
-	cursor: pointer;
 	width: 70%;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	background: linear-gradient(270deg,#f05f40,#ff7043,#e64a19) !important;
+	/*background: linear-gradient(270deg,#f05f40,#ff7043,#e64a19) !important;*/
+}
+
+.teamIMG p {
+	font-size: 14px !important;
 }
 
 .teamIMGRow {

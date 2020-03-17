@@ -29,6 +29,7 @@
 }
 
 @keyframes balloons {
+
   0%,
   100% {
     transform: translateY(0) rotate(-4deg);
@@ -191,70 +192,6 @@ textarea {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-/* Loading screen styles */
-/*******************************************************************/
-.loadingContainer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 0 !important;
-  height: 100%;
-  width: 100%;
-  z-index: 99999;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
-
-.loadingContainer .item {
-  width: 100%;
-  height: 100%;
-  background: rgba(246, 249, 255, 0.8);
-  border-radius: 3px;
-  position: relative;
-}
-
-.loadingContainer .loader {
-  width: 10px;
-  height: 48px;
-  background: #e64a19;
-  position: relative;
-  animation: loaderAnimation 1s ease-in-out infinite;
-  animation-delay: 0.4s;
-  top: 50%;
-  margin: -28px auto 0;
-}
-
-.loadingContainer .loader::after,
-.loadingContainer .loader::before {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 48px;
-  background: #e64a19;
-  animation: loaderAnimation 1s ease-in-out infinite;
-}
-
-.loadingContainer .loader::before {
-  right: 18px;
-  animation-delay: 0.2s;
-}
-
-.loadingContainer .loader::after {
-  left: 18px;
-  animation-delay: 0.6s;
-}
-
-@keyframes loaderAnimation {
-  0%,
-  100% {
-    box-shadow: 0 0 0 #e64a19, 0 0 0 #e64a19;
-  }
-
-  50% {
-    box-shadow: 0 -8px 0 #e64a19, 0 8px 0 #e64a19;
-  }
 }
 
 /*******************************************************************/
@@ -759,14 +696,14 @@ nav.navbar.fixed-to-top {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-.navbar-default .navbar-nav > li > a {
+.navbar-default .navbar-nav>li>a {
   color: #fff;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-.navbar-default .navbar-nav > li > a:focus,
-.navbar-default .navbar-nav > li > a:hover {
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover {
   color: #3a3a3a;
   cursor: pointer;
   -webkit-transition: all 0.3s ease-in-out;
@@ -1227,15 +1164,15 @@ nav.navbar.fixed-to-top {
   height: 250px;
 }
 
-.og-grid li > a,
-.og-grid li > a img {
+.og-grid li>a,
+.og-grid li>a img {
   border: none;
   outline: 0;
   display: block;
   position: relative;
 }
 
-.og-grid li.og-expanded > a::after {
+.og-grid li.og-expanded>a::after {
   top: auto;
   border: solid transparent;
   content: " ";
@@ -1573,6 +1510,7 @@ footer a:hover {
 }
 
 @media (max-width: 992px) {
+
   .service.carousel .item h4,
   .service.carousel .item p {
     text-align: center;
@@ -1592,6 +1530,7 @@ footer a:hover {
 }
 
 @media (max-width: 480px) {
+
   .detail .screenshot,
   header .carousel-iphone {
     width: 280px;

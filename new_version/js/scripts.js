@@ -1,13 +1,20 @@
 $(document).ready(function() {
-    // Fire up VideoJS background
-    videojs('bg-video', {
-        "width": "100%",
-        "height": "100%",
-        "fluid": true,
-        "muted": true,
-        "autoplay": true,
-        "loop": true
-    }).Background();
+    // Fire up ThreeJS background
+    VANTA.WAVES({
+        el: "#backAnim",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: true,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: '#212121',
+        shininess: 40.00,
+        waveHeight: 20.00,
+        waveSpeed: 0.5,
+        zoom: 1
+      });
     
     // TypeJS data build
     var iText_TypeJS = new Typed('#infoText_TypeJS', {
@@ -81,100 +88,6 @@ $(document).ready(function() {
         esp32_Renderer.render(esp32_Scene, esp32_Camera);
         requestAnimationFrame(animModel);
     } init3DModel();
-    
-    // jQuery Mapael data build
-    $("#partnersSection").mapael({
-        map: {
-            name: "world_countries",
-            // Enable zoom on the map
-            zoom: { enabled: false },
-            // Set default plots and areas style
-            defaultPlot: {
-                attrs: {
-                    fill: "#90a4ae",
-                    opacity: 0.6
-                },
-                attrsHover: { opacity: 1 },
-                text: {
-                    attrs: { fill: "#f66641" },
-                    attrsHover: { fill: "#000" }
-                }
-            },
-            defaultArea: {
-                attrs: {
-                    fill: "#78909c", 
-                    opacity: 0.6,
-                    stroke: "#546e7a"
-                },
-                attrsHover: { fill: "#ff6e40" }
-            }
-        },
-        // Add some plots on the map
-        plots: {
-            'CCode': {
-                type: "image",
-                url: "img/logos/onlyLogo.png",
-                width: 43,
-                height: 15,
-                latitude: 40.624870,
-                longitude: -8.645730,
-                attrs: { opacity: 0.25 },
-                attrsHover: { transform: "s1.2" }
-            },
-            'Qiba': {
-                type: "image",
-                url: "img/clients/1_new.png",
-                width: 33,
-                height: 15,
-                latitude: 40.624870,
-                longitude: -8.645730,
-                attrs: { opacity: 1 },
-                attrsHover: { transform: "s1.5" },
-                href: "https://qiba.pt/",
-                target: "_blank",
-                tooltip: { content: "<span style=\"font-weight:bold;\">Partner :</span> qiba.connect" }
-            },
-            'Barix': {
-                type: "image",
-                url: "img/clients/2.jpg",
-                width: 27,
-                height: 5,
-                latitude: 47.3989685,
-                longitude: 8.6039575,
-                attrs: { opacity: 0.25 },
-                attrsHover: { transform: "s1.2" },
-                href: "https://www.barix.com/",
-                target: "_blank",
-                tooltip: { content: "<span style=\"font-weight:bold;\">Partner :</span> Barix" }
-            },
-            'Qibixx': {
-                type: "image",
-                url: "img/clients/3.jpg",
-                width: 50,
-                height: 19,
-                latitude: 47.1662641,
-                longitude: 9.4727192,
-                attrs: { opacity: 1 },
-                attrsHover: { transform: "s1.5" },
-                href: "https://www.qibixx.com/pt/",
-                target: "_blank",
-                tooltip: { content: "<span style=\"font-weight:bold;\">Partner :</span> Qibixx" }
-            },
-            'Barix': {
-                type: "image",
-                url: "img/clients/2.jpg",
-                width: 53,
-                height: 10,
-                latitude: 44.968033,
-                longitude: -92.9582556,
-                attrs: { opacity: 1 },
-                attrsHover: { transform: "s1.4" },
-                href: "https://www.barix.com/",
-                target: "_blank",
-                tooltip: { content: "<span style=\"font-weight:bold;\">Partner :</span> Barix" }
-            }
-        }
-    });
 });
 // --------------------------------------------------------------------
 // Detect full page loading
@@ -193,7 +106,7 @@ function onLoad(loading, loaded) {
 onLoad(function(){ },
 function(){
     $("#loadingScreen").fadeOut(500, function() {
-        $("#bg-video").fadeIn(1000).removeClass("invisible").addClass("visible");
+        $("#backAnim").fadeIn(1000).removeClass("invisible").addClass("visible");
         $("#mContainer").fadeIn(500).removeClass("invisible").addClass("visible");
         $("#loadingScreen").remove();
      });
@@ -206,150 +119,120 @@ $(function (){
     TweenLite.defaultEase = Linear.easeNone;
     /* *************************************** */
 
-    // Scroll Timeline + Scene
-    var scrollTimeline = new TimelineMax();
-    scrollTimeline.fromTo("svg#scollLogo", 4, 
-        {y: "100%", opacity: 1, ease: Linear.easeNone}, 
-        {y: "0%", opacity: 0, ease: Linear.easeNone}
-    );
-    new ScrollMagic.Scene({
-        triggerElement: "#scrollIndicator",
-        triggerHook: 0.5,
-        duration: 1000
-    })
-    .setTween(scrollTimeline)
-    .addTo(mController);
-    /* *************************************** */
-
     // Landing Timeline + Scene
     var landTimeline = new TimelineMax();
-    landTimeline.fromTo("section#landing_01", 4, 
+    landTimeline.fromTo("#landingSection #landing_01", 1, 
         {x: "100%", opacity: 0.25, ease: Linear.easeNone}, 
         {x: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("section#landing_02", 4, 
+    ).fromTo("#landingSection svg#scrollLogo", 1, 
+        {scale: 1, opacity: 1, ease: Linear.easeNone}, 
+        {scale: 0.25, opacity: 0, ease: Linear.easeNone}
+    ).fromTo("#landingSection #landing_02", 1, 
         {y: "-100%", opacity: 0, ease: Linear.easeNone}, 
         {y: "0%", opacity: 1, ease: Linear.easeNone}
-    );
-    landTimeline.fromTo("div#landTitle_1", 4, 
+    ).fromTo("#landingSection #landTitle_1", 1, 
         {y: "200%", opacity: 0, ease: Linear.easeNone}, 
         {y: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("div#landTitle_2", 4, 
+    ).fromTo("#landingSection #landTitle_2", 1, 
         {y: "200%", opacity: 0, ease: Linear.easeNone}, 
         {y: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("div#landTitle_3", 4, 
+    ).fromTo("#landingSection #landTitle_3", 1, 
         {y: "200%", opacity: 0, ease: Linear.easeNone}, 
         {y: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("div#divLanding", 4, 
-        {ease: Linear.easeNone}, 
-        {opacity: 0.25, ease: Linear.easeNone}
+    ).fromTo("#landingSection #divWaitLanding", 1, 
+        {x: "100%", ease: Linear.easeNone}, 
+        {x: "-100%", ease: Linear.easeNone}
     );
     new ScrollMagic.Scene({
-        triggerElement: "#divLanding",
+        triggerElement: "#landingSection",
         triggerHook: "onLeave",
-        duration: 2500
+        duration: "200%"
     })
-    .setPin("#divLanding")
+    .setPin("#landingSection")
     .setTween(landTimeline)
     .addTo(mController);
     /* *************************************** */
 
     // About Timeline + Scene
     var aboutTimeline = new TimelineMax();
-    aboutTimeline.fromTo("div#aboutTitle_1", 4, 
+    aboutTimeline.fromTo("#aboutSection #aboutTitle_1", 1, 
         {y: "-100%", opacity: 0, ease: Linear.easeNone}, 
         {y: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("div#aboutTitle_2", 4, 
+    ).fromTo("#aboutSection #aboutTitle_2", 1, 
         {y: "100%", opacity: 0, ease: Linear.easeNone}, 
         {y: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("section#about_01", 4, 
+    ).fromTo("#aboutSection #about_01", 1, 
         {scale: 0.5, opacity: 0, ease: Linear.easeNone}, 
         {scale: 1, opacity: 1, ease: Linear.easeNone}
-    );
-    aboutTimeline.fromTo(".aboutPanel #robotDiv", 4, 
+    ).fromTo(".aboutPanel #robotDiv", 1, 
         {ease: Linear.easeNone}, 
         {opacity: 1, ease: Linear.easeNone}
-    ).fromTo(".aboutPanel #robotSVG", 4, 
+    ).fromTo(".aboutPanel #robotSVG", 1, 
         {scale: 0.25, opacity: 0.25, ease: Linear.easeNone}, 
         {scale: 1, opacity: 1, ease: Linear.easeNone}
-    ).fromTo(".aboutPanel #robotText", 4, 
+    ).fromTo(".aboutPanel #robotText", 1, 
         {y: "50%", opacity: 0, ease: Linear.easeNone}, 
         {y: "0%", opacity: 1, ease: Linear.easeNone}
-    );
-    aboutTimeline.fromTo(".aboutPanel #iterationsDiv", 4, 
+    ).fromTo(".aboutPanel #iterationsDiv", 1, 
         {ease: Linear.easeNone}, 
         {opacity: 1, ease: Linear.easeNone}
-    ).fromTo(".aboutPanel #iterationsSVG", 4, 
+    ).fromTo(".aboutPanel #iterationsSVG", 1, 
         {scale: 0.25, opacity: 0.25, ease: Linear.easeNone}, 
         {scale: 1, opacity: 1, ease: Linear.easeNone}
-    ).fromTo(".aboutPanel #iterationsText", 4, 
+    ).fromTo(".aboutPanel #iterationsText", 1, 
         {y: "50%", opacity: 0, ease: Linear.easeNone}, 
         {y: "0%", opacity: 1, ease: Linear.easeNone}
-    );
-    aboutTimeline.fromTo(".aboutPanel #teamDiv", 4, 
+    ).fromTo(".aboutPanel #teamDiv", 1, 
         {ease: Linear.easeNone}, 
         {opacity: 1, ease: Linear.easeNone}
-    ).fromTo(".aboutPanel #teamSVG", 4, 
+    ).fromTo(".aboutPanel #teamSVG", 1, 
         {scale: 0.25, opacity: 0.25, ease: Linear.easeNone}, 
         {scale: 1, opacity: 1, ease: Linear.easeNone}
-    ).fromTo(".aboutPanel #teamText", 4, 
+    ).fromTo(".aboutPanel #teamText", 1, 
         {y: "50%", opacity: 0, ease: Linear.easeNone}, 
         {y: "0%", opacity: 1, ease: Linear.easeNone}
-    );
-    aboutTimeline.fromTo(".aboutPanel #mindsetDiv", 4, 
+    ).fromTo(".aboutPanel #mindsetDiv", 1, 
         {ease: Linear.easeNone}, 
         {opacity: 1, ease: Linear.easeNone}
-    ).fromTo(".aboutPanel #mindsetSVG", 4, 
+    ).fromTo(".aboutPanel #mindsetSVG", 1, 
         {scale: 0.25, opacity: 0.25, ease: Linear.easeNone}, 
         {scale: 1, opacity: 1, ease: Linear.easeNone}
-    ).fromTo(".aboutPanel #mindsetText", 4, 
+    ).fromTo(".aboutPanel #mindsetText", 1, 
         {y: "50%", opacity: 0, ease: Linear.easeNone}, 
         {y: "0%", opacity: 1, ease: Linear.easeNone}
-    );
-    aboutTimeline.fromTo(".aboutPanel #robotDiv", 4, 
-        {ease: Linear.easeNone}, 
-        {x: "-100%", opacity: 0, ease: Linear.easeNone}
-    ).fromTo(".aboutPanel #iterationsDiv", 4, 
-        {ease: Linear.easeNone}, 
-        {y: "100%", opacity: 0, ease: Linear.easeNone}
-    ).fromTo(".aboutPanel #teamDiv", 4, 
-        {ease: Linear.easeNone}, 
-        {y: "100%", opacity: 0, ease: Linear.easeNone}
-    ).fromTo(".aboutPanel #mindsetDiv", 4, 
-        {ease: Linear.easeNone}, 
-        {x: "100%", opacity: 0, ease: Linear.easeNone}
     );
     new ScrollMagic.Scene({
-        triggerElement: "#divAbout",
+        triggerElement: "#aboutSection",
         triggerHook: "onLeave",
-        duration: 6000
+        duration: "300%"
     })
-    .setPin("#divAbout")
+    .setPin("#aboutSection")
     .setTween(aboutTimeline)
     .addTo(mController);
     /* *************************************** */
 
     // Info Timeline + Scene
     var infoTimeline = new TimelineMax();
-    infoTimeline.fromTo("#infoSection #infoSection_01", 4, 
+    infoTimeline.fromTo("#infoSection #infoSection_01", 1, 
         {opacity: 0, ease: Linear.easeNone}, 
         {opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#infoSection #infoText_01", 4, 
+    ).fromTo("#infoSection #infoText_01", 1, 
         {opacity: 0, ease: Linear.easeNone}, 
         {opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#infoSection #infoSection_02", 4, 
+    ).fromTo("#infoSection #infoSection_02", 1, 
         {x: "100%", ease: Linear.easeNone}, 
         {x: "0%", ease: Linear.easeNone}
-    ).fromTo("#infoSection #infoText_02", 4, 
+    ).fromTo("#infoSection #infoText_02", 1, 
         {opacity: 0, ease: Linear.easeNone}, 
         {opacity: 1, ease: Linear.easeNone}
-    ).fromTo("div#infoSection", 4, 
+    ).fromTo("#infoSection", 1, 
         {ease: Linear.easeNone}, 
-        {x: "100%", opacity: 0, ease: Linear.easeNone}
+        {x: "100%", opacity: 0.25, ease: Linear.easeNone}
     );
     new ScrollMagic.Scene({
         triggerElement: "#infoSection",
         triggerHook: "onLeave",
-        duration: 3000
+        duration: "200%"
     })
     .setPin("#infoSection")
     .setTween(infoTimeline)
@@ -358,44 +241,41 @@ $(function (){
 
     // Work Timeline + Scene
     var workTimeline = new TimelineMax();
-    workTimeline.fromTo("#workSection #workTitle", 4, 
+    workTimeline.fromTo("#workSection #workTitle", 1, 
         {scale: 0.25, opacity: 0, ease: Linear.easeNone}, 
         {scale: 1, opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#workSection #workCard_01", 4, 
+    ).fromTo("#workSection #workCard_01", 1, 
         {x: "50%", y: "100%", opacity: 0, ease: Linear.easeNone}, 
         {x: "50%", y: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#workSection #workCard_01", 4, 
+    ).fromTo("#workSection #workCard_01", 1, 
         {x: "50%", opacity: 0, ease: Linear.easeNone}, 
         {x: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#workSection #workCard_02", 4, 
+    ).fromTo("#workSection #workCard_02", 1, 
         {x: "50%", y: "100%", opacity: 0, ease: Linear.easeNone}, 
         {x: "50%", y: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#workSection #workCard_02", 4, 
+    ).fromTo("#workSection #workCard_02", 1, 
         {x: "50%", opacity: 0, ease: Linear.easeNone}, 
         {x: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#workSection #workCard_03", 4, 
+    ).fromTo("#workSection #workCard_03", 1, 
         {x: "50%", y: "100%", opacity: 0, ease: Linear.easeNone}, 
         {x: "50%", y: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#workSection #workCard_03", 4, 
+    ).fromTo("#workSection #workCard_03", 1, 
         {x: "50%", opacity: 0, ease: Linear.easeNone}, 
         {x: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#workSection #svgBox_01", 4, 
+    ).fromTo("#workSection #svgBox_01", 1, 
         {scale: 1, opacity: 1, ease: Linear.easeNone}, 
         {scale: 0.75, opacity: 0.5, ease: Linear.easeNone}
-    ).fromTo("#workSection #svgBox_02", 4, 
+    ).fromTo("#workSection #svgBox_02", 1, 
         {scale: 1, opacity: 1, ease: Linear.easeNone}, 
         {scale: 0.75, opacity: 0.5, ease: Linear.easeNone}
-    ).fromTo("#workSection #svgBox_03", 4, 
+    ).fromTo("#workSection #svgBox_03", 1, 
         {scale: 1, opacity: 1, ease: Linear.easeNone}, 
         {scale: 0.75, opacity: 0.5, ease: Linear.easeNone}
-    ).fromTo("div#workSection", 4, 
-        {ease: Linear.easeNone}, 
-        {scale: 0, opacity: 0, ease: Linear.easeNone}
     );
     new ScrollMagic.Scene({
         triggerElement: "#workSection",
         triggerHook: "onLeave",
-        duration: 3000
+        duration: "200%"
     })
     .setPin("#workSection")
     .setTween(workTimeline)
@@ -404,60 +284,53 @@ $(function (){
 
     // Team Timeline + Scene
     var teamTimeline = new TimelineMax();
-    teamTimeline.fromTo("div#teamTitle", 4, 
+    teamTimeline.fromTo("#teamSection #teamTitle", 1, 
         {opacity: 0, ease: Linear.easeNone}, 
         {opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#teamTitle #teamText", 4, 
+    ).fromTo("#teamTitle #teamText", 1, 
         {scale: 3, opacity: 0, ease: Linear.easeNone}, 
         {scale: 1, opacity: 1, ease: Linear.easeNone}
-    ).fromTo("div#teamTitle", 4, 
-        {ease: Linear.easeNone}, 
-        {opacity: 0.25, ease: Linear.easeNone}
-    );
-    teamTimeline.fromTo("div#teamContent", 4, 
-        {opacity: 0, ease: Linear.easeNone}, 
-        {opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#teamContent #teamLogo", 4, 
-        {x: "-100%", y: "-100%", opacity: 0, ease: Linear.easeNone}, 
-        {x: "0%", y: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#teamLogo #logoIMG", 4, 
-        {x: "-50%", opacity: 0, ease: Linear.easeNone}, 
-        {x: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#teamContent #teamBox_01", 4, 
-        {x: "-100%", opacity: 0, ease: Linear.easeNone}, 
-        {x: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#teamContent #teamBox_02", 4, 
-        {x: "-100%", opacity: 0, ease: Linear.easeNone}, 
-        {x: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#teamContent #teamBox_03", 4, 
-        {x: "-100%", opacity: 0, ease: Linear.easeNone}, 
-        {x: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#teamContent #teamBox_04", 4, 
-        {y: "-100%", opacity: 0, ease: Linear.easeNone}, 
-        {y: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#teamContent #teamBox_05", 4, 
-        {x: "-100%", y: "-100%", opacity: 0, ease: Linear.easeNone}, 
-        {x: "0%", y: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#teamContent #teamBox_06", 4, 
-        {x: "-100%", y: "-100%", opacity: 0, ease: Linear.easeNone}, 
-        {x: "0%", y: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#teamContent #teamBox_07", 4, 
-        {x: "-100%", y: "-100%", opacity: 0, ease: Linear.easeNone}, 
-        {x: "0%", y: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#teamContent #teamLogo", 4, 
-        {scale: 1, ease: Linear.easeNone}, 
-        {x: "-100%", y: "-100%", scale: 0.25, opacity: 0, ease: Linear.easeNone}
-    ).fromTo("#teamContent .teamBox", 4, 
-        {ease: Linear.easeNone}, 
-        {scale: 0.25, opacity: 0, ease: Linear.easeNone}
-    ).fromTo("div#teamSection", 4, 
+    ).fromTo("#teamSection #teamTitle", 1, 
         {ease: Linear.easeNone}, 
         {opacity: 0, ease: Linear.easeNone}
+    ).fromTo("#teamSection #teamContent", 1, 
+        {opacity: 0, ease: Linear.easeNone}, 
+        {opacity: 1, ease: Linear.easeNone}
+    ).fromTo("#teamContent #teamLogo", 1, 
+        {x: "-100%", y: "-100%", opacity: 0, ease: Linear.easeNone}, 
+        {x: "0%", y: "0%", opacity: 1, ease: Linear.easeNone}
+    ).fromTo("#teamLogo #logoIMG", 1, 
+        {x: "-50%", opacity: 0, ease: Linear.easeNone}, 
+        {x: "0%", opacity: 1, ease: Linear.easeNone}
+    ).fromTo("#teamContent #teamBox_01", 1, 
+        {x: "-100%", opacity: 0, ease: Linear.easeNone}, 
+        {x: "0%", opacity: 1, ease: Linear.easeNone}
+    ).fromTo("#teamContent #teamBox_02", 1, 
+        {x: "-100%", opacity: 0, ease: Linear.easeNone}, 
+        {x: "0%", opacity: 1, ease: Linear.easeNone}
+    ).fromTo("#teamContent #teamBox_03", 1, 
+        {x: "-100%", opacity: 0, ease: Linear.easeNone}, 
+        {x: "0%", opacity: 1, ease: Linear.easeNone}
+    ).fromTo("#teamContent #teamBox_04", 1, 
+        {y: "-100%", opacity: 0, ease: Linear.easeNone}, 
+        {y: "0%", opacity: 1, ease: Linear.easeNone}
+    ).fromTo("#teamContent #teamBox_05", 1, 
+        {x: "-100%", y: "-100%", opacity: 0, ease: Linear.easeNone}, 
+        {x: "0%", y: "0%", opacity: 1, ease: Linear.easeNone}
+    ).fromTo("#teamContent #teamBox_06", 1, 
+        {x: "-100%", y: "-100%", opacity: 0, ease: Linear.easeNone}, 
+        {x: "0%", y: "0%", opacity: 1, ease: Linear.easeNone}
+    ).fromTo("#teamContent #teamBox_07", 1, 
+        {x: "-100%", y: "-100%", opacity: 0, ease: Linear.easeNone}, 
+        {x: "0%", y: "0%", opacity: 1, ease: Linear.easeNone}
+    ).fromTo("#teamContent #teamLogo", 1, 
+        {ease: Linear.easeNone},
+        {opacity: 0.25, ease: Linear.easeNone}
     );
     new ScrollMagic.Scene({
         triggerElement: "#teamSection",
         triggerHook: "onLeave",
-        duration: 8000
+        duration: "300%"
     })
     .setPin("#teamSection")
     .setTween(teamTimeline)
@@ -466,36 +339,57 @@ $(function (){
 
     // Partners Timeline + Scene
     var partnersTimeline = new TimelineMax();
-    partnersTimeline.fromTo("#partnersSection #partnersSection_01", 4, 
+    partnersTimeline.fromTo("#partnersSection #partnersTitle", 1, 
         {opacity: 0, ease: Linear.easeNone}, 
         {opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#partnersSection #partnersText_01", 4, 
-        {opacity: 0, ease: Linear.easeNone}, 
-        {opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#partnersSection #partnersText_01", 4, 
-        {ease: Linear.easeNone}, 
-        {opacity: 0, ease: Linear.easeNone}
-    ).fromTo("div#infoSection", 4, 
-        {ease: Linear.easeNone}, 
-        {x: "100%", opacity: 0, ease: Linear.easeNone}
-    ).fromTo("#partnersSection #divMap", 4, 
+    ).fromTo("#partnersSection #partnersText", 1, 
         {scale: 0.5, opacity: 0, ease: Linear.easeNone}, 
         {scale: 1, opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#partnersSection #divMap", 4, 
-        {ease: Linear.easeNone}, 
-        {scale: 0.5, opacity: 0, ease: Linear.easeNone}
-    ).fromTo("#partnersSection #partnersSection_01", 4, 
+    ).fromTo("#partnersSection #partnersText", 1, 
         {ease: Linear.easeNone}, 
         {opacity: 0, ease: Linear.easeNone}
+    ).fromTo("#partnersSection #partnersTitle", 1, 
+        {ease: Linear.easeNone}, 
+        {opacity: 0, ease: Linear.easeNone}
+    ).fromTo("#partnersContent #partner_01", 1, 
+        {x: "-100%", ease: Linear.easeNone}, 
+        {x: "0%", ease: Linear.easeNone}
+    ).fromTo("#partnersContent #partner_02", 1, 
+        {y: "100%", ease: Linear.easeNone}, 
+        {y: "0%", ease: Linear.easeNone}
+    ).fromTo("#partnersContent #partner_03", 1, 
+        {x: "100%", ease: Linear.easeNone}, 
+        {x: "0%", ease: Linear.easeNone}
+    ).fromTo("#partnersContent", 1, 
+        {ease: Linear.easeNone}, 
+        {scale: 0.5, opacity: 0.5, ease: Linear.easeNone}
     );
     new ScrollMagic.Scene({
         triggerElement: "#partnersSection",
         triggerHook: "onLeave",
-        duration: 4000
+        duration: "300%"
     })
     .setPin("#partnersSection")
     .setTween(partnersTimeline)
     .addTo(mController);
     /* *************************************** */
-});
 
+    // Contacts Timeline + Scene
+    var contactsTimeline = new TimelineMax();
+    contactsTimeline.fromTo("#contactsSection #backLight", 1, 
+        {scale: 0.5, opacity: 0.25, ease: Linear.easeNone}, 
+        {scale: 1, opacity: 1, ease: Linear.easeNone}
+    ).fromTo("#contactsSection #backDark", 1, 
+        {x: "-50%", opacity: 0, ease: Linear.easeNone}, 
+        {x: "0%", opacity: 1, ease: Linear.easeNone}
+    );
+    new ScrollMagic.Scene({
+        triggerElement: "#contactsSection",
+        triggerHook: "onLeave",
+        duration: "100%"
+    })
+    .setPin("#contactsSection")
+    .setTween(contactsTimeline)
+    .addTo(mController);
+    /* *************************************** */
+});

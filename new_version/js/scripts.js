@@ -134,7 +134,7 @@ $(function (){
     ).fromTo("#landingSection #landing_01", 1, 
         {x: "100%", opacity: 0.25, ease: Linear.easeNone}, 
         {x: "0%", opacity: 1, ease: Linear.easeNone}
-    ).fromTo("#landingSection svg#scrollLogo", 1, 
+    ).fromTo("#landingSection #scrollMouse", 1, 
         {scale: 1, opacity: 1, ease: Linear.easeNone}, 
         {scale: 0.25, opacity: 0, ease: Linear.easeNone}
     ).fromTo("#landingSection #landing_02", 1, 
@@ -319,7 +319,7 @@ $(function (){
     new ScrollMagic.Scene({
         triggerElement: "#teamSection",
         triggerHook: "onLeave",
-        duration: "300%"
+        duration: "350%"
     })
     .setPin("#teamSection")
     .setTween(teamTimeline)
@@ -344,14 +344,14 @@ $(function (){
         {ease: Linear.easeNone}, 
         {opacity: 0, ease: Linear.easeNone}
     ).fromTo("#partnersContent #partner_01", 1, 
-        {x: "-100%", ease: Linear.easeNone}, 
-        {x: "0%", ease: Linear.easeNone}
+        {x: "-100%", opacity: 0, ease: Linear.easeNone}, 
+        {x: "0%", opacity: 1, ease: Linear.easeNone}
     ).fromTo("#partnersContent #partner_02", 1, 
-        {y: "50%", opacity: 0, ease: Linear.easeNone}, 
-        {y: "0%", opacity: 1, ease: Linear.easeNone}
+        {x: "-100%", opacity: 0, ease: Linear.easeNone}, 
+        {x: "0%", opacity: 1, ease: Linear.easeNone}
     ).fromTo("#partnersContent #partner_03", 1, 
-        {x: "100%", ease: Linear.easeNone}, 
-        {x: "0%", ease: Linear.easeNone}
+        {x: "-100%", opacity: 0, ease: Linear.easeNone}, 
+        {x: "0%", opacity: 1, ease: Linear.easeNone}
     ).fromTo("#partnersContent", 1, 
         {ease: Linear.easeNone}, 
         {scale: 0.5, opacity: 0.5, ease: Linear.easeNone}
@@ -359,7 +359,7 @@ $(function (){
     new ScrollMagic.Scene({
         triggerElement: "#partnersSection",
         triggerHook: "onLeave",
-        duration: "200%"
+        duration: "250%"
     })
     .setPin("#partnersSection")
     .setTween(partnersTimeline)

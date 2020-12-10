@@ -133,19 +133,42 @@ html {
   position: fixed;
   bottom: 10%;
   display: inline-flex;
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   justify-content: center;
   align-content: flex-end;
   align-items: flex-end;
 }
-.scrollIndSVG {
-  max-width: 25vw;
-  height: 20vh !important;
+.scrollIndicator .mouse {
+  background: #4e5559 linear-gradient(transparent 0%, transparent 50%, #fff 50%, #fff 100%);
+  position: relative;
+  width: 52px;
+  height: 88px;
+  border-radius: 100px;
+  background-size: 100% 200%;
+  animation: mouseColorSlide 5s linear infinite, nudgeMouse 5s ease-out infinite;
 }
-.scrollIndSVG #Button {
-	-webkit-animation: scrollSlideTop 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite alternate both;
-	        animation: scrollSlideTop 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite alternate both;
+.scrollIndicator .mouse:before, .mouse:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+.scrollIndicator .mouse:before {
+  width: 46px;
+  height: 82px;
+  background-color: #212121;
+  border-radius: 100px;
+}
+.scrollIndicator .mouse:after {
+  background-color: #fff;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  animation: mouseTrackBallSlide 5s linear infinite;
 }
 /* -------------------------------------------------- */
 
@@ -724,11 +747,11 @@ html {
 }
 .partnersContent .bendPanel {
   position: relative;
-  height: 100%;
-  width: 33.3%;
+  height: 75%;
+  width: 30%;
   transform: skew(-20deg);
   -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, 
-    from(rgba(0,0,0,0.5)), to(rgba(0,0,0,0)));
+    from(rgba(0,0,0,0.7)), to(rgba(0,0,0,0)));
 }
 .partnersContent .bendPanel picture { 
   position: absolute;

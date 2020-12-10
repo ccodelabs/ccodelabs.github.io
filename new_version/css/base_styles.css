@@ -1,7 +1,11 @@
 /* Base styles */
 /* Hide scrollbar for Chrome, Safari and Opera */
 ::-webkit-scrollbar { display: none; }
-body { scroll-behavior: smooth; }
+html { 
+  max-width: 100% !important;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
 .noselect {
   -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -97,6 +101,32 @@ body { scroll-behavior: smooth; }
 }
 /* -------------------------------------------------- */
 
+/* SideBar Section styles/animations */
+/* -------------------------------------------------- */
+.sideBar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100 !important;
+  height: 100vh;
+  width: 5vw;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+.sideBar .sideBarContent {
+  background-color: rgba(33, 33, 33, 0.9);
+  border-radius: 2.5vw 0 0 2.5vw;
+  padding: 2.5vh 1vw 2.5vh 1vw;
+  /*text-shadow: 2px 1px 2px #263238;*/
+}
+.sideBar .sideBarContent li { transition: 0.3s; }
+.sideBar .sideBarContent a:link,
+.sideBar .sideBarContent a:visited { color: #f66641; }
+/* -------------------------------------------------- */
+
 /* Scroll Section styles/animations */
 /* -------------------------------------------------- */
 .scrollIndicator {
@@ -182,6 +212,16 @@ body { scroll-behavior: smooth; }
   padding: 5vh 12.5vw 2.5vh 12.5vw;
   text-align: center;
   text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
+}
+@supports (background: paint(extra-superUnderline)) {
+  .aboutTitle #aboutTitle_2 {
+    padding-bottom: 1rem;
+    --extra-underlineNumber: 5;
+    --extra-underlineColor: #fafafa;
+    --extra-underlineSpread: 15;
+    --extra-underlineWidth: 1;
+    background: paint(extra-superUnderline);
+  }
 }
 .aboutPanel { 
   font-family: monospace;
@@ -347,6 +387,16 @@ body { scroll-behavior: smooth; }
   text-align: left;
   text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
 }
+@supports (background: paint(extra-superUnderline)) {
+  .workTitle div {
+    padding-bottom: 1rem;
+    --extra-underlineNumber: 4;
+    --extra-underlineColor: #fafafa;
+    --extra-underlineSpread: 15;
+    --extra-underlineWidth: 1;
+    background: paint(extra-superUnderline);
+  }
+}
 .workTitle div { padding-left: 2.5vw; }
 .workContainer .workCard {
   position: relative;
@@ -501,7 +551,6 @@ body { scroll-behavior: smooth; }
   height: 100vh;
   width: 100vw;
   padding: 5vh 5vw;
-  background: rgba(246, 102, 65, 0.2);
   display: inline-grid;
   grid-template-columns: auto auto auto auto;
   overflow: hidden;
@@ -567,7 +616,7 @@ body { scroll-behavior: smooth; }
   align-items: flex-end;
   transition: 0.5s;
   z-index: 2;
-  background:rgba(33, 33, 33, 1);
+  background:rgba(33, 33, 33, 0.8);
 }
 .teamBox:hover .teamIMGBox { transform: translateY(-10vh); }
 .teamIMGBox img {
@@ -720,9 +769,6 @@ body { scroll-behavior: smooth; }
 }
 .formContact .backDark {
   position: relative;
-  width: 25vw;
-  height: 50vh;
-  margin-left: 5vw;
   background: rgba(33, 33, 33, 0.9);
   padding: 5vh 2.5vw;
   z-index: 10;
@@ -731,27 +777,19 @@ body { scroll-behavior: smooth; }
   width: 100%;
   height: 100%;
 }
-.infoContact #contactLogo source,
-.infoContact #contactLogo img {
-  max-width: 15vw;
-  height: 7.5vh !important;
-}
 .infoContact .infoLocation {
-  height: 7.5vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
 }
 .infoContact .infoEmail {
-  height: 7.5vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
 }
 .infoContact .infoNumber {
-  height: 7.5vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -762,7 +800,6 @@ body { scroll-behavior: smooth; }
   margin-left: 1vw;
 }
 .infoContact .socialMedia {
-  height: 10vh;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -778,15 +815,137 @@ body { scroll-behavior: smooth; }
 }
 .formContact .backLight {
   position: relative;
-  width: 75vw;
-  height: 65vh;
-  margin-left: -10vw;
   background: rgba(250, 250, 250, 0.8);
-  padding: 5vh 5vw 5vh 15vw;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
+}
+@supports (background: paint(extra-superUnderline)) {
+  .backLight .form-row .border-secondary {
+    padding-bottom: 1rem;
+    --extra-underlineNumber: 5;
+    --extra-underlineColor: #212121;
+    --extra-underlineSpread: 15;
+    --extra-underlineWidth: 1;
+    background: paint(extra-superUnderline);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .formContact .backDark {
+    width: 75vw;
+    height: 40vh;
+  }
+  .infoContact #contactLogo source,
+  .infoContact #contactLogo img {
+    max-width: 15vw;
+    height: 5vh !important;
+  }
+  .infoContact h5 { font-size: 0.5rem !important; }
+  .infoContact .infoLocation { height: 5vh; }
+  .infoContact .infoEmail { height: 5vh; }
+  .infoContact .infoNumber { height: 5vh; }
+  .infoContact .socialMedia { height: 7.5vh; }
+  .infoContact .socialMedia i { font-size: 1em !important; }
+  .formContact .backLight {
+    width: 90vw;
+    height: 75vh;
+    padding: 2.5vh 5vw;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .formContact .backDark {
+    width: 100vw;
+    height: 40vh;
+  }
+  .infoContact #contactLogo source,
+  .infoContact #contactLogo img {
+    max-width: 15vw;
+    height: 5vh !important;
+  }
+  .infoContact h5 { font-size: 0.5rem !important; }
+  .infoContact .infoLocation { height: 5vh; }
+  .infoContact .infoEmail { height: 5vh; }
+  .infoContact .infoNumber { height: 5vh; }
+  .infoContact .socialMedia { height: 7.5vh; }
+  .infoContact .socialMedia i { font-size: 1em !important; }
+  .formContact .backLight {
+    width: 90vw;
+    height: 75vh;
+    padding: 2.5vh 5vw;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .formContact .backDark {
+    width: 100vw;
+    height: 35vh;
+  }
+  .infoContact #contactLogo source,
+  .infoContact #contactLogo img {
+    max-width: 15vw;
+    height: 4vh !important;
+  }
+  .infoContact h5 { font-size: 0.75rem !important; }
+  .infoContact .infoLocation { height: 4vh; }
+  .infoContact .infoEmail { height: 4vh; }
+  .infoContact .infoNumber { height: 4vh; }
+  .infoContact .socialMedia { height: 6vh; }
+  .infoContact .socialMedia i { font-size: 1.5em !important; }
+  .formContact .backLight {
+    position: relative;
+    width: 90vw;
+    height: 65vh;
+    padding: 2vh 4vw;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .formContact .backDark {
+    width: 100vw;
+    height: 30vh;
+  }
+  .infoContact #contactLogo source,
+  .infoContact #contactLogo img {
+    max-width: 15vw;
+    height: 5vh !important;
+  }
+  .infoContact h5 { font-size: 1rem !important; }
+  .infoContact .infoLocation { height: 5vh; }
+  .infoContact .infoEmail { height: 5vh; }
+  .infoContact .infoNumber { height: 5vh; }
+  .infoContact .socialMedia { height: 7.5vh; }
+  .infoContact .socialMedia i { font-size: 1.5em !important; }
+  .formContact .backLight {
+    width: 90vw;
+    height: 65vh;
+    padding: 2.5vh 5vw;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .formContact .backDark {
+    width: 25vw;
+    height: 50vh;
+  }
+  .infoContact #contactLogo source,
+  .infoContact #contactLogo img {
+    max-width: 15vw;
+    height: 7.5vh !important;
+  }
+  .infoContact h5 { font-size: 1.25rem !important; }
+  .infoContact .infoLocation { height: 7.5vh; }
+  .infoContact .infoEmail { height: 7.5vh; }
+  .infoContact .infoNumber { height: 7.5vh; }
+  .infoContact .socialMedia { height: 10vh; }
+  .infoContact .socialMedia i { font-size: 2em !important; }
+  .formContact .backLight {
+    width: 75vw;
+    height: 60vh;
+    margin-left: -10vw;
+    padding: 5vh 5vw 5vh 15vw;
+  }
 }
 .formContact .backLight .form-group {
   display: flex;

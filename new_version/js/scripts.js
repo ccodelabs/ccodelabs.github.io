@@ -355,8 +355,8 @@ $(function (){
         {x: "-100%", ease: Linear.easeNone}, 
         {x: "0%", ease: Linear.easeNone}
     ).fromTo("#partnersContent #partner_02", 1, 
-        {y: "100%", ease: Linear.easeNone}, 
-        {y: "0%", ease: Linear.easeNone}
+        {y: "50%", opacity: 0, ease: Linear.easeNone}, 
+        {y: "0%", opacity: 1, ease: Linear.easeNone}
     ).fromTo("#partnersContent #partner_03", 1, 
         {x: "100%", ease: Linear.easeNone}, 
         {x: "0%", ease: Linear.easeNone}

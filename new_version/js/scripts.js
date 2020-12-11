@@ -109,11 +109,8 @@ function onLoad(loading, loaded) {
 // Hide/Remove load section
 onLoad(function(){ },
 function(){
-    $("#loadingScreen").fadeOut(500, function() {
-        $("#backAnim").fadeIn(1000).removeClass("invisible").addClass("visible");
-        $("#mContainer").fadeIn(500).removeClass("invisible").addClass("visible");
-        $("#loadingScreen").remove();
-     });
+    $("#backAnim").fadeIn(1000).removeClass("invisible").addClass("visible");
+    $("#mContainer").fadeIn(1500).removeClass("invisible").addClass("visible");
 });
 // --------------------------------------------------------------------
 // ScrollMagic
@@ -130,7 +127,7 @@ $(function (){
         {x: "0%", opacity: 1, ease: Linear.easeNone}
     ).fromTo("#sideMenu #sideBar_01", 1, 
         {scale: 1, ease: Linear.easeNone}, 
-        {scale: 1.2, rotation: 50, ease: Linear.easeNone}
+        {scale: 1.2, color: "#f66641", ease: Linear.easeNone}
     ).fromTo("#landingSection #landing_01", 1, 
         {x: "100%", opacity: 0.25, ease: Linear.easeNone}, 
         {x: "0%", opacity: 1, ease: Linear.easeNone}
@@ -153,7 +150,7 @@ $(function (){
     new ScrollMagic.Scene({
         triggerElement: "#landingSection",
         triggerHook: "onLeave",
-        duration: "200%"
+        duration: "100%"
     })
     .setPin("#landingSection")
     .setTween(landTimeline)
@@ -164,7 +161,7 @@ $(function (){
     var aboutTimeline = new TimelineMax();
     aboutTimeline.fromTo("#sideMenu #sideBar_02", 1, 
         {scale: 1, ease: Linear.easeNone}, 
-        {scale: 1.2, rotation: 50, ease: Linear.easeNone}
+        {scale: 1.2, color: "#f66641", ease: Linear.easeNone}
     ).fromTo("#aboutSection #aboutTitle_1", 1, 
         {y: "-100%", opacity: 0, ease: Linear.easeNone}, 
         {y: "0%", opacity: 1, ease: Linear.easeNone}
@@ -187,7 +184,7 @@ $(function (){
     new ScrollMagic.Scene({
         triggerElement: "#aboutSection",
         triggerHook: "onLeave",
-        duration: "200%"
+        duration: "100%"
     })
     .setPin("#aboutSection")
     .setTween(aboutTimeline)
@@ -226,7 +223,7 @@ $(function (){
     var workTimeline = new TimelineMax();
     workTimeline.fromTo("#sideMenu #sideBar_03", 1, 
         {scale: 1, ease: Linear.easeNone}, 
-        {scale: 1.2, rotation: 50, ease: Linear.easeNone}
+        {scale: 1.2, color: "#f66641", ease: Linear.easeNone}
     ).fromTo("#workSection #workTitle", 1, 
         {scale: 0.25, opacity: 0, ease: Linear.easeNone}, 
         {scale: 1, opacity: 1, ease: Linear.easeNone}
@@ -261,7 +258,7 @@ $(function (){
     new ScrollMagic.Scene({
         triggerElement: "#workSection",
         triggerHook: "onLeave",
-        duration: "200%"
+        duration: "100%"
     })
     .setPin("#workSection")
     .setTween(workTimeline)
@@ -272,7 +269,7 @@ $(function (){
     var teamTimeline = new TimelineMax();
     teamTimeline.fromTo("#sideMenu #sideBar_04", 1, 
         {scale: 1, ease: Linear.easeNone}, 
-        {scale: 1.2, rotation: 50, ease: Linear.easeNone}
+        {scale: 1.2, color: "#f66641", ease: Linear.easeNone}
     ).fromTo("#teamSection #teamTitle", 1, 
         {opacity: 0, ease: Linear.easeNone}, 
         {opacity: 1, ease: Linear.easeNone}
@@ -319,7 +316,7 @@ $(function (){
     new ScrollMagic.Scene({
         triggerElement: "#teamSection",
         triggerHook: "onLeave",
-        duration: "350%"
+        duration: "200%"
     })
     .setPin("#teamSection")
     .setTween(teamTimeline)
@@ -330,7 +327,7 @@ $(function (){
     var partnersTimeline = new TimelineMax();
     partnersTimeline.fromTo("#sideMenu #sideBar_05", 1, 
         {scale: 1, ease: Linear.easeNone}, 
-        {scale: 1.2, rotation: 50, ease: Linear.easeNone}
+        {scale: 1.2, color: "#f66641", ease: Linear.easeNone}
     ).fromTo("#partnersSection #partnersTitle", 1, 
         {opacity: 0, ease: Linear.easeNone}, 
         {opacity: 1, ease: Linear.easeNone}
@@ -359,7 +356,7 @@ $(function (){
     new ScrollMagic.Scene({
         triggerElement: "#partnersSection",
         triggerHook: "onLeave",
-        duration: "250%"
+        duration: "200%"
     })
     .setPin("#partnersSection")
     .setTween(partnersTimeline)
@@ -370,7 +367,7 @@ $(function (){
     var contactsTimeline = new TimelineMax();
     contactsTimeline.fromTo("#sideMenu #sideBar_06", 1, 
         {scale: 1, ease: Linear.easeNone}, 
-        {scale: 1.2, rotation: 50, ease: Linear.easeNone}
+        {scale: 1.2, color: "#f66641", ease: Linear.easeNone}
     ).fromTo("#contactsSection #backDark", 1, 
         {x: "-50%", opacity: 0, ease: Linear.easeNone}, 
         {x: "0%", opacity: 1, ease: Linear.easeNone}

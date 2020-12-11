@@ -6,6 +6,7 @@ html {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+.tooltip-inner { font-weight: bold; }
 .noselect {
   -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -27,44 +28,6 @@ html {
 .lightBackground { background-color: rgba(38, 50, 56, 0.2); }
 /* -------------------------------------------------- */
 
-/* Loading Section styles/animations */
-/* -------------------------------------------------- */
-.sectionLoad {
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  background: #536976;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #292E49, #536976);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #292E49, #536976); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-.loadScreenSVG {
-  width: 25vw !important;
-  max-height: 20vh;
-}
-.loadScreenSVG #svg_Ideas_1 {
-  -webkit-animation: loadScreenSlideBottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s infinite alternate both;
-	        animation: loadScreenSlideBottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s infinite alternate both;
-}
-.loadScreenSVG #svg_Ideas_2 {
-  -webkit-animation: loadScreenSlideBottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
-	        animation: loadScreenSlideBottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
-}
-.loadScreenSVG #svg_Ideas_3 {
-  -webkit-animation: loadScreenSlideBottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s infinite alternate both;
-	        animation: loadScreenSlideBottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s infinite alternate both;
-}
-.loadScreenSVG #svg_Screen_1 {
-  -webkit-animation: loadScreenShadow 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) infinite alternate both;
-	        animation: loadScreenShadow 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) infinite alternate both;
-}
-.loadScreenSVG #svg_Screen_2 {
-  -webkit-animation: loadScreenSlideLeft 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
-          animation: loadScreenSlideLeft 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
-}
 /* -------------------------------------------------- */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -124,7 +87,26 @@ html {
 }
 .sideBar .sideBarContent li { transition: 0.3s; }
 .sideBar .sideBarContent a:link,
-.sideBar .sideBarContent a:visited { color: #f66641; }
+.sideBar .sideBarContent a:visited { color: #e0e0e0; }
+@media only screen and (max-width: 600px) {
+  .sideBar .sideBarContent a i { font-size: 0.75rem !important; }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .sideBar .sideBarContent a i { font-size: 0.75rem !important; }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .sideBar .sideBarContent a i { font-size: 1rem !important; }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .sideBar .sideBarContent a i { font-size: 1.25rem !important; }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .sideBar .sideBarContent a i { font-size: 1.5rem !important; }
+}
 /* -------------------------------------------------- */
 
 /* Scroll Section styles/animations */
@@ -142,11 +124,11 @@ html {
 .scrollIndicator .mouse {
   background: #4e5559 linear-gradient(transparent 0%, transparent 50%, #fff 50%, #fff 100%);
   position: relative;
-  width: 52px;
-  height: 88px;
-  border-radius: 100px;
+  width: 44px;
+  height: 75px;
+  animation: mouseColorSlide 7s linear infinite, nudgeMouse 7s ease-out infinite;
   background-size: 100% 200%;
-  animation: mouseColorSlide 5s linear infinite, nudgeMouse 5s ease-out infinite;
+  border-radius: 100px;
 }
 .scrollIndicator .mouse:before, .mouse:after {
   content: "";
@@ -158,17 +140,17 @@ html {
   margin: auto;
 }
 .scrollIndicator .mouse:before {
-  width: 46px;
-  height: 82px;
+  width: 38px;
+  height: 71px;
   background-color: #212121;
   border-radius: 100px;
 }
 .scrollIndicator .mouse:after {
   background-color: #fff;
-  width: 10px;
-  height: 10px;
+  width: 6px;
+  height: 6px;
   border-radius: 100%;
-  animation: mouseTrackBallSlide 5s linear infinite;
+  animation: mouseTrackBallSlide 7s linear infinite;
 }
 /* -------------------------------------------------- */
 
@@ -577,6 +559,7 @@ html {
   display: inline-grid;
   grid-template-columns: auto auto auto auto;
   overflow: hidden;
+  font-family: monospace;
 }
 .teamBox {
   position: relative;
@@ -670,23 +653,23 @@ html {
 }
 .contactIcons li { list-style: none; }
 @media only screen and (max-width: 600px) {
-  .contactIcons li a { font-size: 0.5rem; }
+  .contactIcons li a { font-size: 0.25rem; }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  .contactIcons li a { font-size: 0.5rem; }
+  .contactIcons li a { font-size: 0.25rem; }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  .contactIcons li a { font-size: 0.75rem; }
+  .contactIcons li a { font-size: 0.45rem; }
 }
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  .contactIcons li a { font-size: 1rem; }
+  .contactIcons li a { font-size: 0.65rem; }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  .contactIcons li a { font-size: 1.25rem; }
+  .contactIcons li a { font-size: 0.85rem; }
 }
 .contactIcons li a {
   position: relative;
@@ -716,7 +699,7 @@ html {
   left: 0;
   width: 100%;
   height: 10vh;
-  display: flex;
+  display: inline-grid;
   justify-content: center;
   align-content: center;
   align-items: center;
@@ -724,7 +707,7 @@ html {
   box-sizing: border-box;
   z-index: 1;
 }
-.details h3 {
+.details h5, .details h6 {
   padding: 0;
   text-align: center;
 }
